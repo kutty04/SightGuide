@@ -1,0 +1,57 @@
+# ==============================================================================
+# SightGuide Project Root .gitignore
+# ==============================================================================
+
+# 1. Environment & Secret Credentials
+.env
+.env.*
+!.env.example
+
+# 2. Python Bytecode & Testing Caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# 3. Python Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# 4. Node Dependencies & Frontend Build Output
+node_modules/
+frontend/node_modules/
+frontend/dist/
+dist/
+dist-ssr/
+*.local
+
+# 5. Application & Package Manager Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 6. IDEs, Editors, and Operating System Metadata
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

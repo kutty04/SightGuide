@@ -1,0 +1,5 @@
+method,image_count,mean_pair_diversity,mean_pair_similarity,mean_c2_clip_score,diverged_from_control_count,divergence_rate_pct
+control_naive_clip_top2 (lambda=1.0),12,0.6397,0.3603,30.251,0,0.0
+proposed_diversity_aware (lambda=0.3),12,0.7122,0.2878,30.1147,4,33.33
+proposed_diversity_aware (lambda=0.5),12,0.6723,0.3277,30.2312,2,16.67
+proposed_diversity_aware (lambda=0.7),12,0.6723,0.3277,30.2312,2,16.67

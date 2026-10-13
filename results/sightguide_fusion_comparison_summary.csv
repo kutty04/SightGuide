@@ -1,0 +1,5 @@
+group,method,lambda_weight,total_images,successful_generations,failed_generations,pending_or_dry_run,reused_from_cache,live_api_generations,mean_pair_diversity
+CONTROL_lambda_1.0,CONTROL,1.0,12,11,1,0,12,0,0.6397
+DIVERSITY_AWARE_lambda_0.3,DIVERSITY_AWARE,0.3,12,7,1,4,8,0,0.7122
+DIVERSITY_AWARE_lambda_0.5,DIVERSITY_AWARE,0.5,12,11,1,0,10,2,0.6723
+DIVERSITY_AWARE_lambda_0.7,DIVERSITY_AWARE,0.7,12,9,1,2,10,0,0.6723

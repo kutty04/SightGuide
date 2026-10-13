@@ -1,0 +1,13 @@
+image,baseline_caption,baseline_method,baseline_status,model_name,experiment_timestamp_utc
+ian-dooley-d1UPkiFd04A-unsplash.jpg,a young man with curly hair wearing a black hat,BLIP image-captioning-base,REGENERATED_NOT_ORIGINAL,Salesforce/blip-image-captioning-base,2026-10-12T14:45:26.827040+00:00
+chad-montano-MqT0asuoIcU-unsplash.jpg,a wooden cutting board with a pizza on it,BLIP image-captioning-base,REGENERATED_NOT_ORIGINAL,Salesforce/blip-image-captioning-base,2026-10-12T14:45:27.534349+00:00
+anna-tukhfatullina-food-photographer-stylist-Mzy-OjtCI70-unsplash.jpg,a piece of cake on a plate with rass,BLIP image-captioning-base,REGENERATED_NOT_ORIGINAL,Salesforce/blip-image-captioning-base,2026-10-12T14:45:28.072212+00:00
+edgar-nKC772R_qog-unsplash.jpg,a small kitten is sitting on the ground,BLIP image-captioning-base,REGENERATED_NOT_ORIGINAL,Salesforce/blip-image-captioning-base,2026-10-12T14:45:28.536546+00:00
+ray-hennessy-xUUZcpQlqpM-unsplash.jpg,a red fox standing on top of a rock,BLIP image-captioning-base,REGENERATED_NOT_ORIGINAL,Salesforce/blip-image-captioning-base,2026-10-12T14:45:29.068301+00:00
+sample-boat-400x300.png,white clouds in the sky,BLIP image-captioning-base,REGENERATED_NOT_ORIGINAL,Salesforce/blip-image-captioning-base,2026-10-12T14:45:29.248549+00:00
+sample-alpha-circle-400x300.png,a red circle on a black background,BLIP image-captioning-base,REGENERATED_NOT_ORIGINAL,Salesforce/blip-image-captioning-base,2026-10-12T14:45:29.432112+00:00
+sample-alpha-checker-400x300.png,a red and black checkered pattern,BLIP image-captioning-base,REGENERATED_NOT_ORIGINAL,Salesforce/blip-image-captioning-base,2026-10-12T14:45:29.619342+00:00
+sample-bumblebee-400x300.png,a bee is sitting on a yellow flower,BLIP image-captioning-base,REGENERATED_NOT_ORIGINAL,Salesforce/blip-image-captioning-base,2026-10-12T14:45:29.893868+00:00
+sample-city-park-400x300.webp,a river in the middle of a park,BLIP image-captioning-base,REGENERATED_NOT_ORIGINAL,Salesforce/blip-image-captioning-base,2026-10-12T14:45:30.417060+00:00
+sample-clouds-400x300.jpg,white clouds in the blue sky,BLIP image-captioning-base,REGENERATED_NOT_ORIGINAL,Salesforce/blip-image-captioning-base,2026-10-12T14:45:30.628323+00:00
+sample-photo-3840x2160.jpg,a view of a mountain range with a bright sun in the sky,BLIP image-captioning-base,REGENERATED_NOT_ORIGINAL,Salesforce/blip-image-captioning-base,2026-10-12T14:45:31.151429+00:00

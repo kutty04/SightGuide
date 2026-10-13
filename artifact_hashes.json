@@ -1,0 +1,58 @@
+{
+  "results/sightguide_all_fusion_results.csv": {
+    "size": 2678,
+    "sha256": "61c0390563277c6af2bf13a11a3f5be61403f158409f7f55125b04f6bf5a632c"
+  },
+  "results/sightguide_all_fusion_v2.csv": {
+    "size": 3923,
+    "sha256": "c1e881b5098f96ad24be3474c379b18fe18148029774a96efde63a2848cf02d2"
+  },
+  "results/sightguide_blip_baseline_regenerated.csv": {
+    "size": 2430,
+    "sha256": "d2066508c724c65c62260d9f5477bc7f40df4a37ae1a373d3774c2b564ff46b6"
+  },
+  "results/sightguide_diversity_pairs.csv": {
+    "size": 11769,
+    "sha256": "f97da68f73869b344adf3991ab1d86e02687c161fc62394ecff6d90b47bbc849"
+  },
+  "results/sightguide_human_eval_extended_template.csv": {
+    "size": 3611,
+    "sha256": "12faaf410c422850cf802ba87e54ef81898e244de9d21a46943303b601c2d48e"
+  },
+  "results/sightguide_human_evaluation.csv": {
+    "size": 3372,
+    "sha256": "deb2f8aae598a70928f09875b69da2044b57844c6b9f4ba66f420c065ad5e41f"
+  },
+  "results/sightguide_merged_evaluation.csv": {
+    "size": 6493,
+    "sha256": "311b86238f14231a32bc96ed94959ec00406a8b44efe43c88b941f9bc8469749"
+  },
+  "results/sightguide_method_comparison.csv": {
+    "size": 412,
+    "sha256": "2fd4c99f5f4d0f5dcc769fa3fce8d0a50a259b33d55cd66afdce14e09b102970"
+  },
+  "results/sightguide_multi_image_results.csv": {
+    "size": 4897,
+    "sha256": "939dc9b4f16b9aef3ba46584045197086cd22f1f21b417a30fd2ed7ec084b541"
+  },
+  "results/sightguide_ranking_results.csv": {
+    "size": 385,
+    "sha256": "5b6736c3b03e9015872817a528f65c47d11ba81cad600fc9bbb4c2ce9fa3be6f"
+  },
+  "backend/app/services/diversity_ranker.py": {
+    "size": 12953,
+    "sha256": "7c08ac4e02fdcf82f1144d3a568dd471cacd2dc65ca73733c897565fe7d6eb1c"
+  },
+  "experiments/run_diversity_experiments.py": {
+    "size": 12773,
+    "sha256": "3ae5a398ec8e9c3a5554e79fb730fde865b42a7610d8260b040e554040c27f53"
+  },
+  "experiments/evaluate_metrics.py": {
+    "size": 6766,
+    "sha256": "bc34544d248a66010c741d0af35d80b1cfee625b48ad8ab320e217a666762547"
+  },
+  "tests/test_diversity_ranking.py": {
+    "size": 7927,
+    "sha256": "2edd3b1d8aa8a8f285f7c8aadcf470097cd19ef86408646abb18eeda867fedb0"
+  }
+}
