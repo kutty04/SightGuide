@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import type {
   ComparisonResponse,
   HealthResponse,
@@ -21,6 +21,12 @@ import {
   Sparkles,
 } from 'lucide-react';
 import { Spotlight } from './components/ui/spotlight';
+
+const NeuralConstellation = lazy(() =>
+  import('./components/visuals/NeuralConstellation').then((m) => ({ default: m.NeuralConstellation }))
+);
+
+
 
 
 export const App: React.FC = () => {
@@ -56,6 +62,12 @@ export const App: React.FC = () => {
     <div className="min-h-screen bg-[#030712] text-slate-100 flex flex-col font-sans selection:bg-indigo-500 selection:text-white relative overflow-hidden">
       {/* Volumetric Optical Light Cone */}
       <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="#38bdf8" />
+
+      {/* Atmospheric Neural Constellation WebGL Background (Code-Split / Lazy Loaded) */}
+      <Suspense fallback={null}>
+        <NeuralConstellation />
+      </Suspense>
+
 
       {/* Top Application Bar */}
       <header className="border-b border-slate-800/80 bg-[#080d1a]/85 backdrop-blur-md sticky top-0 z-50">

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Upload, Image as ImageIcon, Sliders, AlertCircle, FileCheck } from 'lucide-react';
 
 interface ImageUploaderProps {
@@ -20,8 +20,18 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({
   const [dragActive, setDragActive] = useState<boolean>(false);
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+  const [isScanning, setIsScanning] = useState<boolean>(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (isScanning) {
+      const timer = setTimeout(() => {
+        setIsScanning(false);
+      }, 1400);
+      return () => clearTimeout(timer);
+    }
+  }, [isScanning]);
 
   const validateAndSetFile = (file: File) => {
     setErrorMsg(null);
@@ -37,7 +47,14 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({
     setSelectedFile(file);
     const url = URL.createObjectURL(file);
     setPreviewUrl(url);
+
+    const prefersReducedMotion = typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReducedMotion) {
+      setIsScanning(true);
+    }
   };
+
 
   const handleDrag = (e: React.DragEvent) => {
     e.preventDefault();
@@ -98,17 +115,46 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({
 
         {previewUrl ? (
           <div className="space-y-3">
-            <div className="relative inline-block max-h-64 rounded-xl overflow-hidden shadow-md border border-slate-700 bg-black">
+            <div className="relative inline-block max-h-64 rounded-xl overflow-hidden shadow-lg border border-slate-700/80 bg-black reticle-bracket">
+              {/* Laser Scanline on first preview reveal */}
+              {isScanning && (
+                <>
+                  <div
+                    className="animate-laser-sweep pointer-events-none absolute inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent shadow-[0_0_12px_#38bdf8] z-20"
+                    aria-hidden="true"
+                  />
+                  <div
+                    className="pointer-events-none absolute top-2 right-2 px-2 py-0.5 rounded bg-black/70 border border-cyan-500/40 text-[10px] font-mono text-cyan-300 z-20 tracking-wider"
+                    aria-hidden="true"
+                  >
+                    OPTICAL SCAN
+                  </div>
+                </>
+              )}
+
+              {/* Active backend processing overlay */}
+              {isLoading && (
+                <div
+                  className="pointer-events-none absolute inset-0 bg-black/50 backdrop-blur-[1px] flex items-center justify-center z-20"
+                  aria-hidden="true"
+                >
+                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/90 border border-cyan-500/50 text-cyan-300 text-xs font-mono">
+                    <div className="w-3 h-3 border-2 border-cyan-400/30 border-t-cyan-400 rounded-full animate-spin" />
+                    <span>EXTRACTING EMBEDDINGS</span>
+                  </div>
+                </div>
+              )}
+
               <img
                 src={previewUrl}
                 alt="Selected image preview"
-                className="max-h-64 w-auto object-contain mx-auto"
+                className="max-h-64 w-auto object-contain mx-auto block"
               />
             </div>
             <div className="flex items-center justify-center gap-2 text-xs text-slate-300">
               <FileCheck className="w-4 h-4 text-emerald-400" />
               <span className="font-medium text-slate-200">{selectedFile?.name}</span>
-              <span className="text-slate-400">
+              <span className="text-slate-400 font-mono">
                 ({((selectedFile?.size || 0) / 1024).toFixed(1)} KB)
               </span>
             </div>
