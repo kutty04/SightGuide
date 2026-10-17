@@ -10,10 +10,15 @@ import type {
   QAResponse,
 } from '../types/api';
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+// In production on Vercel, route via same-origin proxy ('') to eliminate CORS completely.
+// In local development or standalone setups, fallback to VITE_API_URL or localhost.
+const isVercel = typeof window !== 'undefined' && window.location.hostname.includes('vercel.app');
+const API_BASE = isVercel ? '' : (import.meta.env.VITE_API_URL || 'http://localhost:8000');
 
 export async function fetchHealth(): Promise<HealthResponse> {
-  const resp = await fetch(`${API_BASE}/api/health`);
+  const resp = await fetch(`${API_BASE}/api/health`, {
+    headers: { 'Accept': 'application/json' },
+  });
   if (!resp.ok) {
     throw new Error(`Health check failed: HTTP ${resp.status}`);
   }
