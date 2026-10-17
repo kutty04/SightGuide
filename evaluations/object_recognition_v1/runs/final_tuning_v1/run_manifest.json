@@ -1,0 +1,58 @@
+{
+  "run_id": "final_tuning_v1",
+  "timestamp_utc": "2026-10-15T06:17:06.437563+00:00",
+  "git_branch": "feature/cinematic-redesign",
+  "system": {
+    "os": "Windows-11-10.0.26300-SP0",
+    "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+    "onnxruntime_version": "1.31.0",
+    "cpu_providers": [
+      "CPUExecutionProvider"
+    ]
+  },
+  "dataset": {
+    "zip_path": "C:\\Users\\Admin\\Downloads\\sample-images-main.zip",
+    "total_files_in_zip": 2000,
+    "unique_images": 1976,
+    "duplicate_files": 24,
+    "images_evaluated": 1976
+  },
+  "model": {
+    "name": "YOLOv8n",
+    "format": "ONNX",
+    "path": "D:\\SightGuide_V2\\evaluations\\object_recognition_v1\\models\\yolov8n.onnx",
+    "sha256": "b2bc52f40e8e1c532427d5bde3575a5d5b571b739fab2c6df443733ed1589cbd",
+    "input_shape": [
+      1,
+      3,
+      640,
+      640
+    ],
+    "total_classes": 80
+  },
+  "configuration": {
+    "min_conf_cache": 0.25,
+    "sweep_thresholds": [
+      0.35,
+      0.45,
+      0.55,
+      0.65
+    ],
+    "sweep_ious": [
+      0.45,
+      0.6
+    ],
+    "recommended_conf": 0.55,
+    "recommended_iou": 0.45
+  },
+  "files_generated": [
+    "evaluations\\object_recognition_v1\\runs\\final_tuning_v1\\run_manifest.json",
+    "evaluations\\object_recognition_v1\\runs\\final_tuning_v1\\image_inventory.csv",
+    "evaluations\\object_recognition_v1\\runs\\final_tuning_v1\\detector_results.jsonl",
+    "evaluations\\object_recognition_v1\\runs\\final_tuning_v1\\threshold_comparison.csv",
+    "evaluations\\object_recognition_v1\\runs\\final_tuning_v1\\caption_detector_disagreements.csv",
+    "evaluations\\object_recognition_v1\\runs\\final_tuning_v1\\human_review_template.csv",
+    "evaluations\\object_recognition_v1\\runs\\final_tuning_v1\\latency_summary.json",
+    "evaluations\\object_recognition_v1\\runs\\final_tuning_v1\\final_summary.json"
+  ]
+}

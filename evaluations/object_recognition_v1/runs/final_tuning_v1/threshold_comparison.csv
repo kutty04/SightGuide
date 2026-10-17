@@ -1,0 +1,9 @@
+confidence_threshold,nms_iou_threshold,total_detections,mean_detections_per_image,empty_images_count,empty_rate_percent,has_detections_count,has_detections_rate_percent,dense_clutter_ge_5_count,dense_clutter_rate_percent,people_count,vehicles_count,animals_count,outdoor_count,accessories_count,sports_count,kitchen_food_count,indoor_furniture_count,electronics_appliances_count,sweep_eval_latency_ms
+0.35,0.45,1757,0.889,923,46.71,1053,53.29,52,2.63,400,193,522,16,47,73,281,116,109,112.59
+0.35,0.6,1785,0.903,923,46.71,1053,53.29,56,2.83,406,195,533,17,48,73,284,117,112,101.47
+0.45,0.45,1345,0.681,1072,54.25,904,45.75,24,1.21,332,155,458,8,35,48,159,78,72,82.38
+0.45,0.6,1355,0.686,1072,54.25,904,45.75,27,1.37,333,156,463,8,36,48,160,78,73,76.17
+0.55,0.45,1073,0.543,1193,60.37,783,39.63,14,0.71,292,122,402,6,29,28,96,51,47,66.5
+0.55,0.6,1076,0.545,1193,60.37,783,39.63,14,0.71,293,122,403,6,30,28,96,51,47,60.95
+0.65,0.45,839,0.425,1317,66.65,659,33.35,8,0.4,243,97,346,6,17,21,60,21,28,29.0
+0.65,0.6,839,0.425,1317,66.65,659,33.35,8,0.4,243,97,346,6,17,21,60,21,28,24.09

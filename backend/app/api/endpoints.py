@@ -32,8 +32,13 @@ try:
         CaptionResponse,
         ComparisonResponse,
         HealthResponse,
+        OCRResponse,
+        QARequest,
+        QAResponse,
     )
     from app.services.caption_pipeline import CaptionPipeline
+    from app.services.ocr_service import OCRService
+    from app.services.qa_service import QAService
 except ImportError:
     from ..schemas import (
         BenchmarkImageRecord,
@@ -41,8 +46,13 @@ except ImportError:
         CaptionResponse,
         ComparisonResponse,
         HealthResponse,
+        OCRResponse,
+        QARequest,
+        QAResponse,
     )
     from ..services.caption_pipeline import CaptionPipeline
+    from ..services.ocr_service import OCRService
+    from ..services.qa_service import QAService
 
 
 router = APIRouter(prefix="/api", tags=["SightGuide"])
@@ -54,13 +64,15 @@ MAX_FILE_SIZE = 10 * 1024 * 1024  # 10 MB
 
 @router.get("/health", response_model=HealthResponse)
 async def health_check() -> HealthResponse:
-    """Return system health, device info, model availability, and Groq configuration status."""
+    """Return system health, device info, model availability, OCR engine, and Groq configuration status."""
     pipeline = CaptionPipeline.get_instance()
+    ocr_service = OCRService.get_instance()
     groq_set = bool(os.environ.get("GROQ_API_KEY", "").strip())
     return HealthResponse(
         status="healthy",
         version="1.0.0",
         blip_available=pipeline.blip_loaded,
+        ocr_available=ocr_service.is_available,
         groq_configured=groq_set,
         active_device=pipeline.device,
     )
@@ -71,6 +83,7 @@ async def generate_caption(
     file: UploadFile = File(..., description="Image file (JPEG, PNG, WebP)"),
     lambda_weight: float = Form(0.5, ge=0.0, le=1.0, description="MMR trade-off weight lambda"),
     method: str = Form("proposed", description="'control' or 'proposed'"),
+    decoding_strategy: str = Form("sample", description="'sample' or 'beam' decoding strategy"),
 ) -> CaptionResponse:
     """Generate image caption using selected candidate ranking and fusion method."""
     ext = Path(file.filename or "").suffix.lower()
@@ -88,7 +101,21 @@ async def generate_caption(
         )
 
     pipeline = CaptionPipeline.get_instance()
+    ocr_service = OCRService.get_instance()
     groq_key = os.environ.get("GROQ_API_KEY", "").strip() or None
+
+    # Extract OCR text if engine is available so it can inform caption fusion
+    extracted_ocr_text: Optional[str] = None
+    extracted_norm_ocr_text: Optional[str] = None
+    if ocr_service.is_available:
+        try:
+            ocr_res = await run_in_threadpool(ocr_service.extract_text, content)
+            if ocr_res.get("has_text") and ocr_res.get("text"):
+                extracted_ocr_text = ocr_res["text"].strip()
+                if ocr_res.get("normalized_text"):
+                    extracted_norm_ocr_text = ocr_res["normalized_text"].strip()
+        except Exception as ocr_err:
+            print(f"[Endpoints] Notice: OCR extraction skipped during captioning: {ocr_err}")
 
     try:
         result = await run_in_threadpool(
@@ -97,8 +124,12 @@ async def generate_caption(
             filename=file.filename or "uploaded_image.jpg",
             lambda_weight=lambda_weight,
             target_method=method.lower(),
-            groq_api_key=groq_key
+            decoding_strategy=decoding_strategy.lower(),
+            groq_api_key=groq_key,
+            ocr_text=extracted_ocr_text,
+            normalized_ocr_text=extracted_norm_ocr_text,
         )
+
         return CaptionResponse(**result)
     except Exception as exc:
         raise HTTPException(
@@ -111,6 +142,7 @@ async def generate_caption(
 async def compare_captions(
     file: UploadFile = File(..., description="Image file (JPEG, PNG, WebP)"),
     lambda_weight: float = Form(0.5, ge=0.0, le=1.0, description="MMR trade-off weight lambda"),
+    decoding_strategy: str = Form("sample", description="'sample' or 'beam' decoding strategy"),
 ) -> ComparisonResponse:
     """Run side-by-side comparison of Control vs. Diversity-Aware Proposed methods."""
     ext = Path(file.filename or "").suffix.lower()
@@ -136,6 +168,7 @@ async def compare_captions(
             image_bytes=content,
             filename=file.filename or "uploaded_image.jpg",
             lambda_weight=lambda_weight,
+            decoding_strategy=decoding_strategy.lower(),
             groq_api_key=groq_key
         )
         return result
@@ -249,3 +282,110 @@ async def get_benchmark_image(image_name: str) -> FileResponse:
         media_type = "image/webp"
 
     return FileResponse(str(img_path), media_type=media_type)
+
+
+@router.post("/ocr/extract", response_model=OCRResponse)
+async def extract_image_text(
+    file: UploadFile = File(..., description="Image file (JPEG, PNG, WebP)")
+) -> OCRResponse:
+    """Extract visible text from image using local RapidOCR ONNX engine."""
+    ext = Path(file.filename or "").suffix.lower()
+    if ext not in ALLOWED_EXTENSIONS:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=f"Unsupported image extension '{ext}'. Allowed: {sorted(ALLOWED_EXTENSIONS)}"
+        )
+
+    content = await file.read()
+    if len(content) > MAX_FILE_SIZE:
+        raise HTTPException(
+            status_code=status.HTTP_413_REQUEST_ENTITY_TOO_LARGE,
+            detail=f"File exceeds maximum size limit of {MAX_FILE_SIZE // (1024 * 1024)} MB."
+        )
+
+    ocr_service = OCRService.get_instance()
+    result = await run_in_threadpool(ocr_service.extract_text, content)
+    return OCRResponse(
+        filename=file.filename or "uploaded_image",
+        text=result.get("text", ""),
+        normalized_text=result.get("normalized_text"),
+        has_text=result.get("has_text", False),
+        lines=result.get("lines", []),
+        message=result.get("message"),
+        engine=result.get("engine", "rapidocr-onnxruntime-cpu"),
+        execution_time_seconds=result.get("execution_time_seconds", 0.0)
+    )
+
+
+
+@router.get("/results/decoding-comparison")
+async def get_decoding_comparison() -> dict:
+    """Return latest versioned decoding comparison experiment records and summary metadata."""
+    results_dir = PROJECT_ROOT / "evaluations" / "eval_v2" / "results"
+    csv_file = results_dir / "eval_v2_decoding_comparison_v2.csv"
+    json_file = results_dir / "eval_v2_experiment_metadata_v2.json"
+
+    # Fall back to v1 if v2 not found
+    if not csv_file.is_file():
+        csv_file = results_dir / "eval_v2_decoding_comparison.csv"
+        json_file = results_dir / "eval_v2_experiment_metadata.json"
+
+    metadata = {}
+    if json_file.is_file():
+        import json
+        with open(json_file, "r", encoding="utf-8") as f:
+            metadata = json.load(f)
+
+    rows = []
+    if csv_file.is_file():
+        with open(csv_file, "r", encoding="utf-8") as f:
+            rows = list(csv.DictReader(f))
+
+    return {
+        "metadata": metadata,
+        "rows": rows,
+        "total_records": len(rows),
+        "source_file": csv_file.name if csv_file.is_file() else "none"
+    }
+
+
+@router.get("/results/manifest")
+async def get_dataset_manifest() -> dict:
+    """Return Eval-V2 dataset manifest summary and balanced category counts."""
+    manifest_file = PROJECT_ROOT / "evaluations" / "eval_v2" / "metadata" / "dataset_manifest.csv"
+    if not manifest_file.is_file():
+        return {"total": 0, "categories": {}, "splits": {}, "records": []}
+
+    records = []
+    categories = {}
+    splits = {}
+    with open(manifest_file, "r", encoding="utf-8") as f:
+        records = list(csv.DictReader(f))
+
+    for r in records:
+        cat = r.get("category", "unknown")
+        split = r.get("split", "unknown")
+        categories[cat] = categories.get(cat, 0) + 1
+        splits[split] = splits.get(split, 0) + 1
+
+    return {
+        "total_images": len(records),
+        "categories": categories,
+        "splits": splits,
+        "records": records
+    }
+
+
+@router.post("/qa/ask", response_model=QAResponse)
+async def ask_visual_question(
+    payload: QARequest
+) -> QAResponse:
+    """Answer conversational questions grounded strictly in verified scene description and OCR text.
+
+    Enforces honest uncertainty and strict grounding constraints.
+    Rejects speculation about unobservable visual attributes.
+    """
+    qa_service = QAService.get_instance()
+    response = await run_in_threadpool(qa_service.answer_question, payload)
+    return response
+

@@ -1,0 +1,24 @@
+{
+  "experiment_name": "SightGuide Eval-V2 Decoding & Genuine Scoring Evaluation",
+  "timestamp_utc": "2026-10-13T16:52:51.601482+00:00",
+  "total_images_evaluated": 8,
+  "model_checkpoint": "Salesforce/blip-image-captioning-base",
+  "scoring_method": "blip_cross_entropy_log_likelihood",
+  "hardware_environment": "Intel Core i5-1235U CPU (No GPU/CUDA)",
+  "results_by_strategy": {
+    "sample": {
+      "mean_latency_seconds": 29.525,
+      "mean_pool_diversity": 0.7496,
+      "mean_repetition_rate": 0.0,
+      "divergent_pairs_count": 2,
+      "divergence_percentage": 25.0
+    },
+    "beam": {
+      "mean_latency_seconds": 21.197,
+      "mean_pool_diversity": 0.4015,
+      "mean_repetition_rate": 0.0,
+      "divergent_pairs_count": 1,
+      "divergence_percentage": 12.5
+    }
+  }
+}

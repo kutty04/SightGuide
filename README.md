@@ -201,3 +201,51 @@ if all_ok:
 - **Blinded Template:** [`results/sightguide_human_eval_blinded_template.csv`](file:///D:/SightGuide/results/sightguide_human_eval_blinded_template.csv) contains all 12 benchmark rows with randomized Method A / Method B presentations. All score fields remain blank until evaluated by human reviewers.
 - **Blinding Key:** [`results/sightguide_human_eval_blinding_key.csv`](file:///D:/SightGuide/results/sightguide_human_eval_blinding_key.csv) is maintained separately.
 - **Statistical Pipeline:** [`experiments/analyze_human_evaluation.py`](file:///D:/SightGuide/experiments/analyze_human_evaluation.py) aggregates ratings at the image level to prevent pseudoreplication and computes Cohen's Kappa and Wilcoxon signed-rank statistics once real ratings are collected.
+
+---
+
+## 9. V2 Research Pipeline Upgrades & Scientific Audit (October 2026)
+
+### 9.1 Genuine Cross-Modal Alignment Scoring
+- **Mathematical Formulation:**
+  Arbitrary live uploads now evaluate candidates via image-conditioned negative sequence cross-entropy loss:
+  $$\text{Score}(c_i \mid I) = -\mathcal{L}_{\text{CE}}(c_i \mid I) = -\frac{1}{T}\sum_{t=1}^T -\log P(w_t \mid w_{<t}, I)$$
+  where vision features condition the text decoder via cross-attention. Higher scores (closer to 0.0) indicate superior conditional likelihood.
+- **Scientific Clarification & Limitations:**
+  - Negative sequence loss is **not** a dedicated Image-Text Matching (ITM) classification probability, nor is it calibrated confidence.
+  - Likelihood is influenced by language model fluency priors, vocabulary frequency, and sequence length. It serves as an uncalibrated relative ranking heuristic within candidate pools rather than an absolute truth score.
+- **Cache Isolation:**
+  Benchmark images in `dataset/` are verified via SHA-256 content hashing (`is_verified_benchmark`), strictly preventing live uploads from retrieving historical cached scores.
+
+### 9.2 Candidate Generation & Safeguards
+- **Safeguards Applied:**
+  1. `clean_and_validate_caption`: Regex-based token stutter and loop cleaner.
+  2. `deduplicate_candidate_pool`: Pairwise Jaccard token overlap filter ($>0.85$ threshold).
+  3. Generation parameters: `repetition_penalty=1.2`, `no_repeat_ngram_size=2`, `min_length=8`.
+  4. Heuristic warning notice: Flagged when top candidate score falls below provisional threshold (configurable via `SIGHTGUIDE_ALIGNMENT_WARNING_THRESHOLD`, default `-3.5`).
+- **Methodological Note on Repetition Rates:**
+  The measured $0.00\%$ bigram repetition rate during evaluation is **enforced by decoder constraint** via `no_repeat_ngram_size=2`. Unconstrained metrics such as distinct-1 and distinct-2 ratios provide true lexical richness evaluations.
+
+### 9.3 Diversity-Aware Ranking (MMR) Formulation
+- **Anchor Invariance:** Candidate pool is sorted by genuine visual score before selection; anchor $c_1^*$ is strictly the highest visually grounded candidate ($\arg\max_{c} \text{Score}(c)$).
+- **Scale Normalization:** Candidate scores are normalized into $[0.0, 1.0]$ via min-max scaling before linear combination with Jaccard lexical similarity $\text{Sim}(c_1^*, c_j) \in [0.0, 1.0]$.
+- **Boundary Verification:**
+  - When $\lambda = 1.0$, the formulation reproduces the naive Top-2 Control choice.
+  - When $\lambda = 0.0$, the formulation selects the candidate maximizing lexical divergence.
+
+### 9.4 Eval-V2 Evaluation Dataset
+- **Curated Dataset:** 96 verified, legally reusable images across 6 balanced categories (16 images per category):
+  1. `people_and_interactions`
+  2. `cartoons_and_illustrations`
+  3. `animals_and_wildlife`
+  4. `everyday_objects`
+  5. `indoor_and_cluttered`
+  6. `difficult_and_ambiguous`
+- **Provable Licensing:** Sourced from Wikimedia Commons and Unsplash under Public Domain, CC0, CC-BY, and CC-BY-SA licenses with complete URL provenance, creator attribution, dimensions, and SHA-256 hashes recorded in `evaluations/eval_v2/metadata/dataset_manifest.csv`.
+- **Partitioning:** Formally split into 48 development (`dev`) and 48 held-out (`held_out`) images.
+- **Annotation Status:** Human reference captions in `annotations/human_reference_template.json` (5 slots per image) are explicitly labeled `PENDING_HUMAN_EVALUATION`; zero synthetic ratings were fabricated.
+
+### 9.5 Preservation of Historical Baselines & Hardware Constraints
+- **Baseline Preservation:** All 14 historical files listed in `artifact_hashes.json` remain 100% bit-for-bit identical.
+- **Why Model Fine-Tuning Was Not Executed:**
+  The operational environment utilizes a CPU-only Intel Core i5-1235U processor with integrated graphics and 2.2 GB free RAM. Vision-language parameter fine-tuning requires 8–16 GB dedicated VRAM and paired domain datasets to prevent catastrophic forgetting. Optimization focused on decoding algorithms, cross-modal scoring, and safeguards without incurring out-of-memory instability.

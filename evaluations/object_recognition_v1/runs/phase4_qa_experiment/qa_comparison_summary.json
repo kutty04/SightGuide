@@ -1,0 +1,102 @@
+{
+  "metadata": {
+    "experiment_name": "phase4_qa_comparison",
+    "timestamp": "2026-10-15T10:04:32.373778",
+    "evaluated_cases_count": 8,
+    "confidence_threshold": 0.55,
+    "default_setting_preserved": "SIGHTGUIDE_ENABLE_DETECTOR_QA=false"
+  },
+  "timing_statistics": {
+    "baseline_mean_latency_sec": 23.603,
+    "experimental_mean_latency_sec": 23.395,
+    "mean_pure_detector_latency_ms": 238.22
+  },
+  "diagnostic_outcomes": {
+    "cases_where_detector_was_queried_and_used": 5,
+    "cases_where_detector_provided_accurate_coco_support": 4,
+    "cases_with_ood_vocabulary_risk_identified": 2,
+    "negative_query_safeguard_verified": true
+  },
+  "detailed_case_evaluations": [
+    {
+      "case_id": "case_1_dog",
+      "image_id": "image-1001.jpg",
+      "question": "Is there a dog in this photo?",
+      "baseline_answer": "Visual analysis indicates: In this image, a black and white photo of a dog ' s face.",
+      "experimental_answer": "Visual analysis indicates: In this image, a black and white photo of a dog ' s face. Additionally, an experimental detector identified a dog (90% confidence).",
+      "detector_used": true,
+      "detector_detections": "dog:0.91",
+      "diagnostic_notes": "Detector provided high-confidence supporting evidence for queried COCO object"
+    },
+    {
+      "case_id": "case_2_boat",
+      "image_id": "image-1119.jpg",
+      "question": "Do you see a boat on the water?",
+      "baseline_answer": "Visual analysis indicates: In this image, a boat rests on the shore of a lake at night.",
+      "experimental_answer": "Visual analysis indicates: In this image, a boat rests on the shore of a lake at night.",
+      "detector_used": false,
+      "detector_detections": "boat:0.81",
+      "diagnostic_notes": ""
+    },
+    {
+      "case_id": "case_3_bird",
+      "image_id": "image-1453.jpg",
+      "question": "Is there a bird flying in this picture?",
+      "baseline_answer": "Visual analysis indicates: In this image, a bird is flying over the water.",
+      "experimental_answer": "Visual analysis indicates: In this image, a bird is flying over the water. Additionally, an experimental detector identified a bird (94% confidence).",
+      "detector_used": true,
+      "detector_detections": "bird:0.94",
+      "diagnostic_notes": "Detector provided high-confidence supporting evidence for queried COCO object"
+    },
+    {
+      "case_id": "case_4_cat",
+      "image_id": "image-1113.jpg",
+      "question": "Do you see a cat or a dog in this room?",
+      "baseline_answer": "Visual analysis indicates: In this image, a gray tabby cat sits on a white table against a blue background.",
+      "experimental_answer": "Visual analysis indicates: In this image, a gray tabby cat sits on a white table against a blue background. Additionally, an experimental detector identified a cat (93% confidence).",
+      "detector_used": true,
+      "detector_detections": "cat:0.93",
+      "diagnostic_notes": "Detector provided high-confidence supporting evidence for queried COCO object"
+    },
+    {
+      "case_id": "case_5_person",
+      "image_id": "image-523.jpg",
+      "question": "Are there any people walking in this scene?",
+      "baseline_answer": "Visual analysis indicates: The people are in the photo is black and white.",
+      "experimental_answer": "Visual analysis indicates: The people are in the photo is black and white. Additionally, an experimental detector identified a person (84% confidence).",
+      "detector_used": true,
+      "detector_detections": "person:0.84",
+      "diagnostic_notes": "Detector provided high-confidence supporting evidence for queried COCO object"
+    },
+    {
+      "case_id": "case_6_fish_ood",
+      "image_id": "image-1211.jpg",
+      "question": "Do you see a fish or a bird in this aquarium?",
+      "baseline_answer": "Visual analysis indicates: In this image, a siam siam siam siam siam siam siam siam siam siam siam siam siam siam siam siam.",
+      "experimental_answer": "Visual analysis indicates: In this image, a siam siam siam siam siam siam siam siam siam siam siam siam siam siam siam siam.",
+      "detector_used": false,
+      "detector_detections": "bird:0.93",
+      "diagnostic_notes": "Detector misclassified fish as 'bird' (OOD COCO limitation)"
+    },
+    {
+      "case_id": "case_7_deer_ood",
+      "image_id": "image-1730.jpg",
+      "question": "Is there a deer or horse in the forest?",
+      "baseline_answer": "Visual analysis indicates: In this image, a deer stands in the middle of a wooded area.",
+      "experimental_answer": "Visual analysis indicates: In this image, a deer stands in the middle of a wooded area.",
+      "detector_used": false,
+      "detector_detections": "horse:0.73",
+      "diagnostic_notes": "Detector misclassified deer as 'horse' (OOD COCO limitation)"
+    },
+    {
+      "case_id": "case_8_negative_vehicles",
+      "image_id": "image-963.jpg",
+      "question": "Is there a car or bicycle in this scene?",
+      "baseline_answer": "Visual analysis indicates: In this image, the mountains are covered in snow.",
+      "experimental_answer": "Visual analysis indicates: In this image, the mountains are covered in snow.",
+      "detector_used": true,
+      "detector_detections": "none",
+      "diagnostic_notes": "Detector correctly found 0 vehicles; proof-of-absence safeguard applied"
+    }
+  ]
+}

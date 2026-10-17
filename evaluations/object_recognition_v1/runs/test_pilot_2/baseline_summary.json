@@ -1,0 +1,32 @@
+{
+  "run_id": "test_pilot_2",
+  "timestamp": "2026-10-14T23:15:24.740337",
+  "execution_mode": "HTTP_API",
+  "sample_manifest": "D:\\SightGuide_V2\\evaluations\\object_recognition_v1\\sample_manifest.json",
+  "total_requested": 2,
+  "total_processed": 2,
+  "successful_evaluations": 2,
+  "failed_evaluations": 0,
+  "latencies_seconds": {
+    "mean": 14.797,
+    "min": 13.032,
+    "max": 16.562,
+    "median": 14.797
+  },
+  "candidate_diversity": {
+    "mean_type_token_ratio": 0.5821,
+    "mean_pairwise_jaccard": 0.2075
+  },
+  "stratum_breakdown": {
+    "L_landscape": {
+      "count": 1,
+      "success": 1,
+      "failed": 0
+    },
+    "RGB_landscape": {
+      "count": 1,
+      "success": 1,
+      "failed": 0
+    }
+  }
+}

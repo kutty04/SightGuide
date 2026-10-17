@@ -1,0 +1,17 @@
+image_id,image_filename,category,pipeline_version,caption_text,human_unsupported_claims_count,human_unsupported_claims_list,human_visible_details_retained_score_1to5,human_factual_correctness_score_1to5,human_fluency_score_1to5,reviewer_id,review_notes,annotation_status
+v3_001_portrait_woman,01_portrait_woman_blue_shirt.png,cropped_portrait,baseline_unconstrained,The faces of a young girl with long black hair and a woman with long hair wearing a blue shirt.,,,,,,,,PENDING_HUMAN_REVIEW
+v3_001_portrait_woman,01_portrait_woman_blue_shirt.png,cropped_portrait,proposed_grounded_v3,"a screenshot of a woman with long black hair, wearing a blue shirt",,,,,,,,PENDING_HUMAN_REVIEW
+v3_002_cartoon_avatar,02_cartoon_avatar.png,illustration,baseline_unconstrained,"A smiley face with blue eyes, one eye closed, and no nose.",,,,,,,,PENDING_HUMAN_REVIEW
+v3_002_cartoon_avatar,02_cartoon_avatar.png,illustration,proposed_grounded_v3,a yellow smiley face with blue eyes,,,,,,,,PENDING_HUMAN_REVIEW
+v3_003_person_silhouette,03_person_cropped_silhouette.png,partially_visible_people,baseline_unconstrained,A black and white icon of a tower alongside the silhouette of a light bulb on a white background.,,,,,,,,PENDING_HUMAN_REVIEW
+v3_003_person_silhouette,03_person_cropped_silhouette.png,partially_visible_people,proposed_grounded_v3,a black and white image of a candle with a silhouette of a lighthouse icon,,,,,,,,PENDING_HUMAN_REVIEW
+v3_004_domestic_animal,04_domestic_cat_chair.png,animals_surroundings,baseline_unconstrained,A brown bird icon and a brown cat icon on a green background.,,,,,,,,PENDING_HUMAN_REVIEW
+v3_004_domestic_animal,04_domestic_cat_chair.png,animals_surroundings,proposed_grounded_v3,a brown cat on a green background,,,,,,,,PENDING_HUMAN_REVIEW
+v3_005_everyday_objects,05_everyday_coffee_cup.png,everyday_objects,baseline_unconstrained,"An illustration of a cube with two different colors, accompanied by three colored shapes arranged on a brown surface.",,,,,,,,PENDING_HUMAN_REVIEW
+v3_005_everyday_objects,05_everyday_coffee_cup.png,everyday_objects,proposed_grounded_v3,"a picture of an object on the floor, a flat icon with blue and yellow colors.",,,,,,,,PENDING_HUMAN_REVIEW
+v3_006_cluttered_desk,06_indoor_cluttered_desk.png,indoor_multi_object,baseline_unconstrained,"An image of a rectangular object with two rectangles, displayed on a screen that shows an image of a computer.",,,,,,,,PENDING_HUMAN_REVIEW
+v3_006_cluttered_desk,06_indoor_cluttered_desk.png,indoor_multi_object,proposed_grounded_v3,A computer screen displays an image of a brown box with purple and black squares.,,,,,,,,PENDING_HUMAN_REVIEW
+v3_007_ambiguous_illustration,07_ambiguous_illustration.png,ambiguous_abstract,baseline_unconstrained,,,,,,,,,PENDING_HUMAN_REVIEW
+v3_007_ambiguous_illustration,07_ambiguous_illustration.png,ambiguous_abstract,proposed_grounded_v3,a white circle on a dark background,,,,,,,,PENDING_HUMAN_REVIEW
+v3_008_visible_text_sign,08_storefront_visible_text.png,images_with_visible_text,baseline_unconstrained,A black and white poster featuring the words “downtown cafe” and the text “down energy cafe” on a beige background.,,,,,,,,PENDING_HUMAN_REVIEW
+v3_008_visible_text_sign,08_storefront_visible_text.png,images_with_visible_text,proposed_grounded_v3,a minimal illustration of the logo for downtown cafe,,,,,,,,PENDING_HUMAN_REVIEW

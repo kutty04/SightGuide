@@ -14,7 +14,7 @@ export const Spotlight: React.FC<SpotlightProps> = ({ className, fill = 'white' 
   return (
     <svg
       className={cn(
-        'animate-spotlight pointer-events-none absolute z-10 h-[169%] w-[138%] lg:w-[84%] opacity-0',
+        'animate-spotlight pointer-events-none absolute z-10 h-[140%] sm:h-[169%] w-full max-w-4xl lg:w-[84%] opacity-0',
         className
       )}
       xmlns="http://www.w3.org/2000/svg"

@@ -55,7 +55,6 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({
     }
   };
 
-
   const handleDrag = (e: React.DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
@@ -98,10 +97,10 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({
         onDragOver={handleDrag}
         onDrop={handleDrop}
         onClick={() => fileInputRef.current?.click()}
-        className={`relative border-2 border-dashed rounded-2xl p-6 text-center cursor-pointer transition-all ${
+        className={`relative border-2 border-dashed p-6 text-center cursor-pointer transition-all ${
           dragActive
-            ? 'border-indigo-500 bg-indigo-950/20'
-            : 'border-slate-700 hover:border-slate-600 bg-slate-900/60'
+            ? 'border-[#D4FF00] bg-[#D4FF00]/5'
+            : 'border-white/20 hover:border-[#D4FF00]/60 bg-[#0c0c0c]'
         }`}
       >
         <input
@@ -115,16 +114,16 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({
 
         {previewUrl ? (
           <div className="space-y-3">
-            <div className="relative inline-block max-h-64 rounded-xl overflow-hidden shadow-lg border border-slate-700/80 bg-black reticle-bracket">
+            <div className="relative inline-block max-h-64 overflow-hidden border border-white/20 bg-black reticle-bracket">
               {/* Laser Scanline on first preview reveal */}
               {isScanning && (
                 <>
                   <div
-                    className="animate-laser-sweep pointer-events-none absolute inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-cyan-400 to-transparent shadow-[0_0_12px_#38bdf8] z-20"
+                    className="animate-laser-sweep pointer-events-none absolute inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-[#D4FF00] to-transparent shadow-[0_0_12px_#D4FF00] z-20"
                     aria-hidden="true"
                   />
                   <div
-                    className="pointer-events-none absolute top-2 right-2 px-2 py-0.5 rounded bg-black/70 border border-cyan-500/40 text-[10px] font-mono text-cyan-300 z-20 tracking-wider"
+                    className="pointer-events-none absolute top-2 right-2 px-2 py-0.5 bg-black/80 border border-[#D4FF00]/60 text-[10px] font-mono text-[#D4FF00] z-20 tracking-wider"
                     aria-hidden="true"
                   >
                     OPTICAL SCAN
@@ -135,12 +134,12 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({
               {/* Active backend processing overlay */}
               {isLoading && (
                 <div
-                  className="pointer-events-none absolute inset-0 bg-black/50 backdrop-blur-[1px] flex items-center justify-center z-20"
+                  className="pointer-events-none absolute inset-0 bg-black/70 backdrop-blur-[2px] flex items-center justify-center z-20"
                   aria-hidden="true"
                 >
-                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/90 border border-cyan-500/50 text-cyan-300 text-xs font-mono">
-                    <div className="w-3 h-3 border-2 border-cyan-400/30 border-t-cyan-400 rounded-full animate-spin" />
-                    <span>EXTRACTING EMBEDDINGS</span>
+                  <div className="flex items-center gap-2.5 px-3.5 py-2 bg-black border border-[#D4FF00] text-[#D4FF00] text-xs font-mono">
+                    <div className="w-3.5 h-3.5 border-2 border-[#D4FF00]/30 border-t-[#D4FF00] rounded-full animate-spin" />
+                    <span className="tracking-widest">EXTRACTING EMBEDDINGS</span>
                   </div>
                 </div>
               )}
@@ -151,24 +150,26 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({
                 className="max-h-64 w-auto object-contain mx-auto block"
               />
             </div>
-            <div className="flex items-center justify-center gap-2 text-xs text-slate-300">
-              <FileCheck className="w-4 h-4 text-emerald-400" />
-              <span className="font-medium text-slate-200">{selectedFile?.name}</span>
-              <span className="text-slate-400 font-mono">
+            <div className="flex items-center justify-center gap-2 text-xs text-zinc-300">
+              <FileCheck className="w-4 h-4 text-[#D4FF00]" />
+              <span className="font-mono text-white">{selectedFile?.name}</span>
+              <span className="text-zinc-500 font-mono">
                 ({((selectedFile?.size || 0) / 1024).toFixed(1)} KB)
               </span>
             </div>
-            <p className="text-xs text-slate-400">Click or drop another image to replace</p>
+            <p className="text-[11px] text-zinc-500 font-mono uppercase tracking-wider">
+              Click or drop another image to replace
+            </p>
           </div>
         ) : (
-          <div className="space-y-2 py-4">
-            <div className="w-12 h-12 bg-indigo-950/60 border border-indigo-700/50 text-indigo-400 rounded-full flex items-center justify-center mx-auto">
+          <div className="space-y-3 py-6">
+            <div className="w-12 h-12 bg-black border border-white/20 text-[#D4FF00] flex items-center justify-center mx-auto">
               <Upload className="w-5 h-5" />
             </div>
-            <div className="text-sm font-semibold text-slate-200">
-              Drop your image here, or <span className="text-indigo-400 underline">browse</span>
+            <div className="text-sm font-bold text-white tracking-wide font-sans">
+              Drop target image here, or <span className="text-[#D4FF00] underline underline-offset-4">browse files</span>
             </div>
-            <p className="text-xs text-slate-400">
+            <p className="text-[11px] text-zinc-500 font-mono tracking-wider uppercase">
               Supports JPEG, PNG, or WebP up to 10 MB
             </p>
           </div>
@@ -176,27 +177,27 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({
       </div>
 
       {errorMsg && (
-        <div className="flex items-center gap-2 p-3 bg-red-950/50 border border-red-800 text-red-200 text-xs rounded-lg">
-          <AlertCircle className="w-4 h-4 flex-shrink-0" />
+        <div className="flex items-center gap-2.5 p-3 bg-red-950/60 border border-red-700 text-red-200 text-xs font-mono">
+          <AlertCircle className="w-4 h-4 flex-shrink-0 text-red-400" />
           <span>{errorMsg}</span>
         </div>
       )}
 
       {/* Diversity Lambda Parameter Control */}
-      <div className="bg-slate-900/80 border border-slate-800 rounded-xl p-4 space-y-3">
+      <div className="bg-[#0c0c0c] border border-white/10 p-4 space-y-3">
         <div className="flex items-center justify-between">
-          <label htmlFor="lambda-slider" className="flex items-center gap-2 text-xs font-semibold text-slate-300 uppercase tracking-wider">
-            <Sliders className="w-4 h-4 text-indigo-400" />
-            Diversity Trade-off Weight (&lambda; = {lambdaWeight.toFixed(2)})
+          <label htmlFor="lambda-slider" className="flex items-center gap-2 text-xs font-mono font-bold text-zinc-300 uppercase tracking-wider">
+            <Sliders className="w-3.5 h-3.5 text-[#D4FF00]" />
+            <span>Diversity Trade-off Weight (&lambda; = {lambdaWeight.toFixed(2)})</span>
           </label>
-          <span className="text-xs text-indigo-300 font-mono font-medium">
+          <span className="text-xs text-[#D4FF00] font-mono font-bold">
             {lambdaWeight === 1.0
-              ? 'Control (Naive Top-2)'
+              ? '[CONTROL: NAIVE TOP-2]'
               : lambdaWeight === 0.5
-              ? 'Primary Balanced (Recommended)'
+              ? '[BALANCED: RECOMMENDED]'
               : lambdaWeight < 0.5
-              ? 'High Diversity Emphasis'
-              : 'High Grounding Emphasis'}
+              ? '[MAX DIVERSITY]'
+              : '[MAX GROUNDING]'}
           </span>
         </div>
 
@@ -208,12 +209,12 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({
           step="0.05"
           value={lambdaWeight}
           onChange={(e) => onLambdaChange(parseFloat(e.target.value))}
-          className="w-full accent-indigo-500 cursor-pointer"
+          className="w-full accent-[#D4FF00] cursor-pointer"
         />
 
-        <div className="flex justify-between text-[11px] text-slate-400 font-mono">
-          <span>&lambda;=0.0 (Max Diversity)</span>
-          <span>&lambda;=0.5 (Primary Balanced)</span>
+        <div className="flex justify-between text-[10px] text-zinc-500 font-mono">
+          <span>&lambda;=0.0 (Max Novelty)</span>
+          <span className="text-[#D4FF00]">&lambda;=0.5 (Primary Balanced)</span>
           <span>&lambda;=1.0 (Naive CLIP Top-2)</span>
         </div>
       </div>
@@ -222,20 +223,22 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({
       <button
         type="submit"
         disabled={!selectedFile || isLoading}
-        className="w-full py-3 px-4 bg-indigo-600 hover:bg-indigo-500 disabled:opacity-50 disabled:pointer-events-none text-white text-sm font-semibold rounded-xl shadow-lg shadow-indigo-950/50 flex items-center justify-center gap-2 transition focus-visible:outline-2 focus-visible:outline-indigo-400"
+        className="w-full py-3.5 px-4 bg-[#D4FF00] hover:bg-[#ccff00] disabled:opacity-40 disabled:pointer-events-none text-black text-xs font-mono font-bold tracking-widest uppercase flex items-center justify-center gap-2 transition focus-visible:outline-2 focus-visible:outline-[#D4FF00]"
       >
         {isLoading ? (
           <>
-            <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-            <span>Processing Image & Evaluating Methods...</span>
+            <div className="w-4 h-4 border-2 border-black/30 border-t-black rounded-full animate-spin" />
+            <span>EXTRACTING CANDIDATES &amp; EVALUATING METHODS...</span>
           </>
         ) : (
           <>
-            <ImageIcon className="w-4 h-4" />
-            <span>Generate & Compare Captions</span>
+            <ImageIcon className="w-4 h-4 text-black" />
+            <span>GENERATE &amp; COMPARE CAPTIONS</span>
           </>
         )}
       </button>
     </form>
   );
 };
+
+export default ImageUploader;
