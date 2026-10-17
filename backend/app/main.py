@@ -66,20 +66,52 @@ app = FastAPI(
     redoc_url="/redoc"
 )
 
+from fastapi import Request
+from fastapi.responses import JSONResponse
+
+# Read additional CORS origins from environment if provided
+_extra_origins = [o.strip() for o in os.environ.get("CORS_ORIGINS", "").split(",") if o.strip()]
+
 # CORS configuration for frontend origins
+_allowed_origins = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "http://localhost:4173",
+    "http://127.0.0.1:4173",
+    "https://sight-guide-iota.vercel.app",
+    "https://sightguide.vercel.app",
+    *_extra_origins
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "http://127.0.0.1:5173",
-        "http://localhost:3000",
-        "http://127.0.0.1:3000",
-        "*"
-    ],
+    allow_origins=_allowed_origins,
+    allow_origin_regex=r"^https:\/\/.*\.vercel\.app$",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+@app.exception_handler(Exception)
+async def global_exception_handler(request: Request, exc: Exception) -> JSONResponse:
+    """Ensure internal errors return valid JSON with explicit CORS headers."""
+    print(f"[GlobalError] Unhandled exception on {request.method} {request.url.path}: {exc}")
+    origin = request.headers.get("origin")
+    headers = {}
+    if origin:
+        headers["Access-Control-Allow-Origin"] = origin
+        headers["Access-Control-Allow-Credentials"] = "true"
+        headers["Access-Control-Allow-Methods"] = "*"
+        headers["Access-Control-Allow-Headers"] = "*"
+    return JSONResponse(
+        status_code=500,
+        content={"detail": f"Internal Server Error: {str(exc)}"},
+        headers=headers
+    )
+
 
 # Register routers
 app.include_router(router)

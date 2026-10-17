@@ -112,6 +112,7 @@ export interface OCRLine {
 export interface OCRResponse {
   filename: string;
   text: string;
+  normalized_text?: string | null;
   has_text: boolean;
   lines: OCRLine[];
   message?: string;

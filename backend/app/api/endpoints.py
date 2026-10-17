@@ -78,12 +78,19 @@ async def health_check() -> HealthResponse:
     )
 
 
+import asyncio
+
+_inference_lock = asyncio.Lock()
+
+
 @router.post("/caption/generate", response_model=CaptionResponse)
 async def generate_caption(
     file: UploadFile = File(..., description="Image file (JPEG, PNG, WebP)"),
     lambda_weight: float = Form(0.5, ge=0.0, le=1.0, description="MMR trade-off weight lambda"),
     method: str = Form("proposed", description="'control' or 'proposed'"),
     decoding_strategy: str = Form("sample", description="'sample' or 'beam' decoding strategy"),
+    ocr_text: Optional[str] = Form(None, description="Optional pre-extracted raw OCR text from client"),
+    normalized_ocr_text: Optional[str] = Form(None, description="Optional pre-extracted normalized OCR text"),
 ) -> CaptionResponse:
     """Generate image caption using selected candidate ranking and fusion method."""
     ext = Path(file.filename or "").suffix.lower()
@@ -104,38 +111,44 @@ async def generate_caption(
     ocr_service = OCRService.get_instance()
     groq_key = os.environ.get("GROQ_API_KEY", "").strip() or None
 
-    # Extract OCR text if engine is available so it can inform caption fusion
-    extracted_ocr_text: Optional[str] = None
-    extracted_norm_ocr_text: Optional[str] = None
-    if ocr_service.is_available:
+    async with _inference_lock:
+        # Use client-provided OCR text if present; otherwise extract if OCR engine is available
+        extracted_ocr_text: Optional[str] = None
+        extracted_norm_ocr_text: Optional[str] = None
+
+        if ocr_text is not None and ocr_text.strip():
+            extracted_ocr_text = ocr_text.strip()
+            if normalized_ocr_text and normalized_ocr_text.strip():
+                extracted_norm_ocr_text = normalized_ocr_text.strip()
+        elif ocr_service.is_available:
+            try:
+                ocr_res = await run_in_threadpool(ocr_service.extract_text, content)
+                if ocr_res.get("has_text") and ocr_res.get("text"):
+                    extracted_ocr_text = ocr_res["text"].strip()
+                    if ocr_res.get("normalized_text"):
+                        extracted_norm_ocr_text = ocr_res["normalized_text"].strip()
+            except Exception as ocr_err:
+                print(f"[Endpoints] Notice: OCR extraction skipped during captioning: {ocr_err}")
+
         try:
-            ocr_res = await run_in_threadpool(ocr_service.extract_text, content)
-            if ocr_res.get("has_text") and ocr_res.get("text"):
-                extracted_ocr_text = ocr_res["text"].strip()
-                if ocr_res.get("normalized_text"):
-                    extracted_norm_ocr_text = ocr_res["normalized_text"].strip()
-        except Exception as ocr_err:
-            print(f"[Endpoints] Notice: OCR extraction skipped during captioning: {ocr_err}")
+            result = await run_in_threadpool(
+                pipeline.process_image,
+                image_bytes=content,
+                filename=file.filename or "uploaded_image.jpg",
+                lambda_weight=lambda_weight,
+                target_method=method.lower(),
+                decoding_strategy=decoding_strategy.lower(),
+                groq_api_key=groq_key,
+                ocr_text=extracted_ocr_text,
+                normalized_ocr_text=extracted_norm_ocr_text,
+            )
 
-    try:
-        result = await run_in_threadpool(
-            pipeline.process_image,
-            image_bytes=content,
-            filename=file.filename or "uploaded_image.jpg",
-            lambda_weight=lambda_weight,
-            target_method=method.lower(),
-            decoding_strategy=decoding_strategy.lower(),
-            groq_api_key=groq_key,
-            ocr_text=extracted_ocr_text,
-            normalized_ocr_text=extracted_norm_ocr_text,
-        )
-
-        return CaptionResponse(**result)
-    except Exception as exc:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Caption pipeline processing error: {exc}"
-        )
+            return CaptionResponse(**result)
+        except Exception as exc:
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail=f"Caption pipeline processing error: {exc}"
+            )
 
 
 @router.post("/caption/compare", response_model=ComparisonResponse)
@@ -162,21 +175,22 @@ async def compare_captions(
     pipeline = CaptionPipeline.get_instance()
     groq_key = os.environ.get("GROQ_API_KEY", "").strip() or None
 
-    try:
-        result = await run_in_threadpool(
-            pipeline.compare_methods,
-            image_bytes=content,
-            filename=file.filename or "uploaded_image.jpg",
-            lambda_weight=lambda_weight,
-            decoding_strategy=decoding_strategy.lower(),
-            groq_api_key=groq_key
-        )
-        return result
-    except Exception as exc:
-        raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Comparison pipeline error: {exc}"
-        )
+    async with _inference_lock:
+        try:
+            result = await run_in_threadpool(
+                pipeline.compare_methods,
+                image_bytes=content,
+                filename=file.filename or "uploaded_image.jpg",
+                lambda_weight=lambda_weight,
+                decoding_strategy=decoding_strategy.lower(),
+                groq_api_key=groq_key
+            )
+            return result
+        except Exception as exc:
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail=f"Comparison pipeline error: {exc}"
+            )
 
 
 @router.get("/benchmark/summary", response_model=BenchmarkSummaryResponse)
@@ -303,18 +317,19 @@ async def extract_image_text(
             detail=f"File exceeds maximum size limit of {MAX_FILE_SIZE // (1024 * 1024)} MB."
         )
 
-    ocr_service = OCRService.get_instance()
-    result = await run_in_threadpool(ocr_service.extract_text, content)
-    return OCRResponse(
-        filename=file.filename or "uploaded_image",
-        text=result.get("text", ""),
-        normalized_text=result.get("normalized_text"),
-        has_text=result.get("has_text", False),
-        lines=result.get("lines", []),
-        message=result.get("message"),
-        engine=result.get("engine", "rapidocr-onnxruntime-cpu"),
-        execution_time_seconds=result.get("execution_time_seconds", 0.0)
-    )
+    async with _inference_lock:
+        ocr_service = OCRService.get_instance()
+        result = await run_in_threadpool(ocr_service.extract_text, content)
+        return OCRResponse(
+            filename=file.filename or "uploaded_image",
+            text=result.get("text", ""),
+            normalized_text=result.get("normalized_text"),
+            has_text=result.get("has_text", False),
+            lines=result.get("lines", []),
+            message=result.get("message"),
+            engine=result.get("engine", "rapidocr-onnxruntime-cpu"),
+            execution_time_seconds=result.get("execution_time_seconds", 0.0)
+        )
 
 
 

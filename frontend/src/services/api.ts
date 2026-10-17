@@ -24,13 +24,21 @@ export async function generateCaption(
   file: File,
   lambdaWeight: number = 0.5,
   method: 'proposed' | 'control' = 'proposed',
-  decodingStrategy: 'sample' | 'beam' = 'sample'
+  decodingStrategy: 'sample' | 'beam' = 'sample',
+  ocrText?: string | null,
+  normalizedOcrText?: string | null
 ): Promise<CaptionResponse> {
   const formData = new FormData();
   formData.append('file', file);
   formData.append('lambda_weight', lambdaWeight.toString());
   formData.append('method', method);
   formData.append('decoding_strategy', decodingStrategy);
+  if (ocrText && ocrText.trim()) {
+    formData.append('ocr_text', ocrText.trim());
+  }
+  if (normalizedOcrText && normalizedOcrText.trim()) {
+    formData.append('normalized_ocr_text', normalizedOcrText.trim());
+  }
 
   const resp = await fetch(`${API_BASE}/api/caption/generate`, {
     method: 'POST',
