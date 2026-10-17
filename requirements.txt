@@ -1,6 +1,3 @@
---extra-index-url https://download.pytorch.org/whl/cpu
-torch>=2.2.0
-transformers>=4.40.0
 fastapi>=0.110.0
 uvicorn>=0.28.0
 python-multipart>=0.0.9
@@ -10,5 +7,6 @@ numpy>=1.26.0
 groq>=0.9.0
 rapidocr-onnxruntime>=1.3.0
 onnxruntime>=1.17.0
+opencv-python-headless>=4.8.0
 requests>=2.31.0
 httpx>=0.27.0

@@ -137,6 +137,9 @@ class CaptionPipeline:
         return cls._instance
 
     def _initialize_device(self) -> None:
+        if not LOCAL_BLIP_SNAPSHOT.is_dir():
+            self.device = "cpu"
+            return
         try:
             import torch
             self.device = "cuda" if torch.cuda.is_available() else "cpu"
