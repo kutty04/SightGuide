@@ -1,0 +1,26 @@
+image_id,stratum,color_mode,width,height,baseline_caption,baseline_ocr,detections_count_all,detections_count_high_conf,detected_labels_high_conf,exploratory_caption_overlap,exploratory_omitted_by_caption,latency_model_median_ms,latency_model_min_ms,latency_model_max_ms,latency_preprocess_ms,latency_postprocess_ms,latency_total_detector_ms
+image-963.jpg,L_landscape,L,1280,960,"The mountains are covered in snow and ice, and a large body of water is filled with ice.",,0,0,,,,53.81,53.23,54.33,36.43,3.15,93.39
+image-1119.jpg,L_landscape,L,1280,877,a boat sits in the middle of a lake at night under a star‑filled sky.,BUEE214,1,1,boat:0.81,boat (0.81) [MENTIONED],,54.41,54.4,55.36,31.71,3.82,89.94
+image-1001.jpg,L_landscape,L,1280,853,a black and white close‑up photo of a dog with its tongue out,,1,1,dog:0.91,dog (0.91) [MENTIONED],,62.69,60.9,68.71,37.47,3.45,103.61
+image-1466.jpg,L_landscape,L,1280,853,a black and white portrait of a bride in traditional bridal attire.,,1,1,person:0.77,person (0.77) [MENTIONED],,85.51,58.1,99.05,30.26,4.84,120.61
+image-1411.jpg,L_landscape,L,1280,853,a black and white photo of trees and a field of flowers,,0,0,,,,61.1,58.4,64.25,35.84,3.29,100.23
+image-1724.jpg,RGB_landscape,RGB,1280,640,a close up of a brown woven fabric,,1,1,bed:0.62,bed (0.62) [OMITTED],bed,59.88,58.7,62.04,31.98,5.73,97.59
+image-1453.jpg,RGB_landscape,RGB,1280,853,a white and black bird in flight over the ocean,,1,1,bird:0.94,bird (0.94) [MENTIONED],,81.28,59.98,82.54,45.97,4.06,131.31
+image-1211.jpg,RGB_landscape,RGB,1280,852,a white and blue fish swimming in an aquarium,,1,1,bird:0.93,bird (0.93) [OMITTED],bird,83.28,66.22,93.49,44.46,3.46,131.2
+image-1184.jpg,RGB_landscape,RGB,1280,853,"a wooden plate filled with seeds on a table, and a wooden bowl filled with dried goji.",,0,0,,,,74.95,69.76,87.68,65.31,3.14,143.4
+image-45.jpg,RGB_landscape,RGB,1280,854,Baskets lined up in rows are stacked on a table at a market.,,0,0,,,,60.93,58.08,66.79,45.68,3.16,109.77
+image-1095.jpg,RGB_landscape,RGB,1280,840,a leaf is sitting on top of an open book,,0,0,,,,54.99,54.7,55.89,41.63,3.58,100.19
+image-1093.jpg,RGB_landscape,RGB,1280,853,a cat laying on top of a couch looking at the camera,,1,0,,,,55.88,55.1,66.14,35.02,3.98,94.89
+image-1113.jpg,RGB_landscape,RGB,1280,853,a grey and white cat sitting on top of a table,ca,1,1,cat:0.93,cat (0.93) [MENTIONED],,63.34,59.58,63.43,37.44,11.12,111.9
+image-906.jpg,RGB_landscape,RGB,1280,859,a lavender field under the stars of the night sky with the Milky Way above,,0,0,,,,60.59,59.98,73.94,46.69,3.57,110.85
+image-1311.jpg,RGB_landscape,RGB,1280,853,a group of weeping trees reflected in the water,,0,0,,,,66.92,61.97,76.82,41.05,3.17,111.14
+image-1794.jpg,RGB_landscape,RGB,1280,853,Three women in brightly colored saris are standing on the shore of a body of water.,,1,0,,,,74.77,63.5,124.83,47.13,3.91,125.81
+image-1947.jpg,RGB_landscape,RGB,1280,853,a street with buildings and a clock on the side of it,,0,0,,,,62.5,59.36,69.82,38.72,3.61,104.83
+image-1047.jpg,RGB_landscape,RGB,1280,852,an aerial view of a cloud-covered mountain,,0,0,,,,68.86,62.47,78.96,38.83,4.51,112.2
+image-1889.jpg,RGB_landscape,RGB,1280,853,an igua is sitting on the sand with its head in its mouth,,1,0,,,,59.85,55.86,62.37,36.27,3.43,99.54
+image-12.jpg,RGB_landscape,RGB,1280,853,"a branch with flowers and leaves, with the sun shining behind it against a yellow sky.",,0,0,,,,56.93,53.98,62.04,36.67,4.59,98.2
+image-523.jpg,L_portrait,L,853,1280,a man is walking across an intersection in a crosswalk.,,1,1,person:0.84,person (0.84) [MENTIONED],,54.46,54.13,55.16,37.28,3.63,95.37
+image-706.jpg,RGB_portrait,RGB,853,1280,a fire hydra on the side of a street near a brick wall,O 10 09,1,1,toilet:0.76,toilet (0.76) [OMITTED],toilet,57.6,53.58,57.97,35.03,4.2,96.83
+image-430.jpg,RGB_portrait,RGB,960,1280,a white kitchen with herring tile flooring and gold hardware,8888888,1,0,,,,54.64,54.51,55.64,38.22,3.71,96.57
+image-1730.jpg,RGB_portrait,RGB,1207,1280,A deer is standing on the side of a dirt road in the middle of a forest.,,1,1,horse:0.73,horse (0.73) [OMITTED],horse,54.64,54.46,56.47,47.81,3.52,105.97
+image-539.jpg,RGB_portrait,RGB,1025,1280,a trolley car on a city street covered with snow during a snow storm,GI,2,0,,,,59.08,57.52,64.48,47.84,3.86,110.79

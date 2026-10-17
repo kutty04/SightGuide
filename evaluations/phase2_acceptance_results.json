@@ -1,0 +1,99 @@
+[
+  {
+    "category": "1. Cropped portrait",
+    "file": "test_portrait_woman.png",
+    "anchor_c1": "a screenshot of person and her name",
+    "fused_caption": "a screenshot of a person and her name, showing a cartoon girl avatar from the game",
+    "ocr_has_text": false,
+    "ocr_text_snippet": "",
+    "ocr_lines_count": 0,
+    "question": "What is the person wearing?",
+    "qa_answer": "Based on the verified scene description and visible text, this cannot be determined from the available visual evidence.",
+    "qa_capability": "CONTEXT_GROUNDED_FALLBACK",
+    "qa_uncertain": true,
+    "qa_sources": [
+      "scene_caption"
+    ],
+    "latency_seconds": 27.705
+  },
+  {
+    "category": "2. Full-body person",
+    "file": "sample-city-park-400x300.webp",
+    "anchor_c1": "a path next to the water with trees and grass",
+    "fused_caption": "a path next to a river with trees and grass in the city of Priro",
+    "ocr_has_text": false,
+    "ocr_text_snippet": "",
+    "ocr_lines_count": 0,
+    "question": "What are the people doing in the scene?",
+    "qa_answer": "Based on the verified scene description and visible text, this cannot be determined from the available visual evidence.",
+    "qa_capability": "CONTEXT_GROUNDED_FALLBACK",
+    "qa_uncertain": true,
+    "qa_sources": [],
+    "latency_seconds": 26.308
+  },
+  {
+    "category": "3. Document/Sign with readable text",
+    "file": "08_storefront_visible_text.png",
+    "anchor_c1": "the logo for downtown cafe, which features a black and white design with gold lettering",
+    "fused_caption": "The logo for downtown cafe, featuring a black and white design with gold lettering, appears on a coffee cup.",
+    "ocr_has_text": true,
+    "ocr_text_snippet": "DOWNTOWN BAKERY 8CAFE",
+    "ocr_lines_count": 1,
+    "question": "What visible words or signs are shown?",
+    "qa_answer": "The coffee cup shows the downtown cafe logo and the visible text on it reads: **\u201cDOWNTOWN BAKERY 8CAFE.\u201d**",
+    "qa_capability": "CONTEXT_GROUNDED_FALLBACK",
+    "qa_uncertain": false,
+    "qa_sources": [
+      "scene_caption",
+      "ocr_text"
+    ],
+    "latency_seconds": 37.864
+  },
+  {
+    "category": "4. Busy scene containing multiple objects",
+    "file": "06_indoor_cluttered_desk.png",
+    "anchor_c1": "an image of a square, square and recal",
+    "fused_caption": "an image of a square with two rectangles",
+    "ocr_has_text": false,
+    "ocr_text_snippet": "",
+    "ocr_lines_count": 0,
+    "question": "What items are on the desk?",
+    "qa_answer": "Based on the verified scene description and visible text, this cannot be determined from the available visual evidence.",
+    "qa_capability": "CONTEXT_GROUNDED_FALLBACK",
+    "qa_uncertain": true,
+    "qa_sources": [],
+    "latency_seconds": 35.654
+  },
+  {
+    "category": "5. Image with no readable text",
+    "file": "sample-clouds-400x300.jpg",
+    "anchor_c1": "a large white cloud",
+    "fused_caption": "a large white cloud with a person flying a kite in the sky",
+    "ocr_has_text": false,
+    "ocr_text_snippet": "",
+    "ocr_lines_count": 0,
+    "question": "Is there any readable text or signage in this picture?",
+    "qa_answer": "No, there is no readable text or signage in the picture.",
+    "qa_capability": "CONTEXT_GROUNDED_FALLBACK",
+    "qa_uncertain": false,
+    "qa_sources": [
+      "scene_caption"
+    ],
+    "latency_seconds": 17.059
+  },
+  {
+    "category": "6. Ambiguous or low-quality image",
+    "file": "07_ambiguous_illustration.png",
+    "anchor_c1": "a black and white circle with a circle in the middle",
+    "fused_caption": "a black and white circle with a circle in the middle, the logo of a studio",
+    "ocr_has_text": true,
+    "ocr_text_snippet": "O",
+    "ocr_lines_count": 1,
+    "question": "Can you determine who this character is?",
+    "qa_answer": "Based on the verified scene description and visible text, this cannot be determined from the available visual evidence.",
+    "qa_capability": "CONTEXT_GROUNDED_FALLBACK",
+    "qa_uncertain": true,
+    "qa_sources": [],
+    "latency_seconds": 52.387
+  }
+]

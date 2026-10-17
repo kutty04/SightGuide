@@ -1,0 +1,24 @@
+{
+  "evaluation_name": "eval_v3_visual_grounding_benchmark",
+  "timestamp_utc": "2026-10-14T04:11:50Z",
+  "sample_size": 8,
+  "results": {
+    "baseline_unconstrained": {
+      "total_unsupported_hallucinations": 0,
+      "total_supported_attributes_retained": 0,
+      "mean_unsupported_per_caption": 0.0,
+      "mean_latency_seconds": 12.87
+    },
+    "proposed_grounded_v3": {
+      "total_unsupported_hallucinations": 0,
+      "total_supported_attributes_retained": 0,
+      "mean_unsupported_per_caption": 0.0,
+      "mean_latency_seconds": 11.38
+    }
+  },
+  "methodological_notes": {
+    "automated_hallucination_definition": "Presence of specific ungrounded keywords (such as out-of-frame jeans/pants on headshots, or fabricated commercial game/movie franchises) verified as absent in ground truth manifest.",
+    "human_evaluation_status": "Human review template populated with live captions and marked PENDING_HUMAN_REVIEW; no fabricated human ratings.",
+    "limitations": "Automated string-matching over known unsupported claims is an uncalibrated proxy; human visual inspection remains required for fine-grained semantic evaluation."
+  }
+}

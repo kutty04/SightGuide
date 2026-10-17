@@ -14,6 +14,7 @@ class HealthResponse(BaseModel):
     status: str = Field(..., description="Service health status ('healthy')")
     version: str = Field("1.0.0", description="API version")
     blip_available: bool = Field(..., description="Whether BLIP captioning model weights are loaded")
+    ocr_available: bool = Field(True, description="Whether RapidOCR text extraction engine is available")
     groq_configured: bool = Field(..., description="Whether GROQ_API_KEY is configured on the backend")
     active_device: str = Field(..., description="Active compute device ('cpu' or 'cuda')")
 
@@ -21,8 +22,11 @@ class HealthResponse(BaseModel):
 class CandidateCaption(BaseModel):
     rank: int = Field(..., description="Candidate rank (1-indexed)")
     caption: str = Field(..., description="Generated caption text")
-    clip_score: float = Field(..., description="Raw CLIP image-text alignment score")
+    clip_score: float = Field(..., description="Raw alignment score (BLIP cross-modal log-likelihood or cached CLIP score)")
     normalized_clip_score: Optional[float] = Field(None, description="Normalized score in [0, 1]")
+    scoring_method: Optional[str] = Field("blip_cross_entropy_log_likelihood", description="Method used to compute the score")
+    raw_loss: Optional[float] = Field(None, description="Raw cross-entropy loss if computed")
+    confidence_warning: Optional[bool] = Field(None, description="Whether candidate triggered provisional low alignment warning")
 
 
 class SelectedPair(BaseModel):
@@ -54,6 +58,9 @@ class CaptionResponse(BaseModel):
     candidates: List[CandidateCaption] = Field(..., description="Pool of generated candidate captions")
     selected_pair: SelectedPair = Field(..., description="Selected caption pair based on requested method")
     fusion: FusionResult = Field(..., description="LLM-fused caption output")
+    scoring_method: str = Field("blip_cross_entropy_log_likelihood", description="Scoring method used for candidate evaluation")
+    confidence_warning: Optional[str] = Field(None, description="Flag when visual alignment confidence is low or uncertain")
+    decoding_strategy: str = Field("sample", description="Decoding strategy used (sample or beam)")
     execution_time_seconds: float = Field(..., description="Total pipeline execution time in seconds")
 
 
@@ -68,6 +75,9 @@ class ComparisonResponse(BaseModel):
     is_divergent: bool = Field(..., description="Whether Proposed pair differs from Control pair")
     pair_diversity_delta: float = Field(..., description="Input diversity difference (Proposed - Control)")
     plain_language_explanation: str = Field(..., description="Plain language explanation of the selection dynamics")
+    scoring_method: str = Field("blip_cross_entropy_log_likelihood", description="Scoring method used for candidate evaluation")
+    confidence_warning: Optional[str] = Field(None, description="Flag when visual alignment confidence is low or uncertain")
+    decoding_strategy: str = Field("sample", description="Decoding strategy used (sample or beam)")
     execution_time_seconds: float = Field(..., description="Total processing time in seconds")
 
 
@@ -96,3 +106,48 @@ class BenchmarkSummaryResponse(BaseModel):
     historical_failure_count: int
     pending_live_count: int
     benchmark_records: List[BenchmarkImageRecord]
+
+
+class OCRLine(BaseModel):
+    text: str = Field(..., description="Recognized line of text")
+    confidence: float = Field(..., description="Recognition confidence in [0, 1]")
+    box: Optional[List[List[float]]] = Field(None, description="Bounding polygon coordinates [[x,y],...]")
+    reading_order: Optional[int] = Field(None, description="1-indexed sequence order according to natural reading layout")
+    normalized_text: Optional[str] = Field(None, description="Contextual interpretation/normalization for noisy handwriting or OCR artifacts")
+
+
+class OCRResponse(BaseModel):
+    filename: str = Field(..., description="Name of uploaded image")
+    text: str = Field(..., description="Full concatenated text detected in the image")
+    normalized_text: Optional[str] = Field(None, description="Full concatenated text with contextual handwriting normalization applied")
+    has_text: bool = Field(..., description="True if one or more valid text lines were found")
+    lines: List[OCRLine] = Field(default_factory=list, description="Structured lines with bounding boxes and confidence")
+    message: Optional[str] = Field(None, description="Informational message (e.g. if no text found)")
+    engine: str = Field("rapidocr-onnxruntime-cpu", description="Underlying OCR engine used")
+    execution_time_seconds: float = Field(..., description="OCR processing latency in seconds")
+
+
+class QAHistoryItem(BaseModel):
+    question: str = Field(..., description="User question")
+    answer: str = Field(..., description="Assistant answer")
+
+
+class QARequest(BaseModel):
+    question: str = Field(..., min_length=1, max_length=500, description="User question about the image")
+    scene_caption: Optional[str] = Field(None, description="Verified scene description generated by pipeline")
+    ocr_text: Optional[str] = Field(None, description="Verified OCR text extracted from the image")
+    history: Optional[List[QAHistoryItem]] = Field(default_factory=list, description="Previous question-answer turns")
+    image_data: Optional[str] = Field(None, description="Base64 encoded image data or data URL for direct vision conditioning")
+
+
+class QAResponse(BaseModel):
+    question: str = Field(..., description="User question")
+    answer: str = Field(..., description="Grounded answer")
+    capability: str = Field("CONTEXT_GROUNDED_FALLBACK", description="Capability level ('VISION_CONDITIONED', 'CONTEXT_GROUNDED_FALLBACK', or 'UNAVAILABLE')")
+    is_uncertain: bool = Field(False, description="True if evidence is insufficient to answer definitively")
+    grounded_sources: List[str] = Field(default_factory=list, description="Sources used to answer ('visual_image', 'scene_caption', 'ocr_text', 'none')")
+    evidence_used: List[str] = Field(default_factory=list, description="Specific snippets of evidence utilized")
+    limitation_notice: Optional[str] = Field(None, description="Explicit statement of model constraints and visual boundaries")
+    model_name: Optional[str] = Field(None, description="Identifier of the vision-language or fusion model used")
+    execution_time_seconds: float = Field(..., description="Latency of Q&A response in seconds")
+

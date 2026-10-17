@@ -1,0 +1,162 @@
+{
+  "experiment": "eval_v4_first_response_descriptiveness",
+  "date": "2026-10-15",
+  "model_blip": "Salesforce/blip-image-captioning-base",
+  "model_llm": "groq/openai/gpt-oss-20b",
+  "total_items": 17,
+  "items": [
+    {
+      "id": "item_01",
+      "image_rel_path": "evaluations/test_portrait_woman.png",
+      "category": "portrait_clothing",
+      "question": "What color is her shirt?",
+      "expected_answer_type": "color_and_garment",
+      "scene_caption": "a portrait of a woman in a blue shirt",
+      "ocr_text": ""
+    },
+    {
+      "id": "item_02",
+      "image_rel_path": "evaluations/test_portrait_woman.png",
+      "category": "portrait_clothing",
+      "question": "What is she wearing?",
+      "expected_answer_type": "clothing_and_accessories",
+      "scene_caption": "a portrait of a woman in a blue shirt",
+      "ocr_text": ""
+    },
+    {
+      "id": "item_03",
+      "image_rel_path": "evaluations/test_portrait_woman.png",
+      "category": "portrait_hair",
+      "question": "What color is her hair?",
+      "expected_answer_type": "hair_color_and_style",
+      "scene_caption": "a portrait of a woman in a blue shirt",
+      "ocr_text": ""
+    },
+    {
+      "id": "item_04",
+      "image_rel_path": "evaluations/test_portrait_woman.png",
+      "category": "facial_expression_visible",
+      "question": "Is she smiling?",
+      "expected_answer_type": "expression_affirmative",
+      "scene_caption": "a portrait of a woman in a blue shirt",
+      "ocr_text": ""
+    },
+    {
+      "id": "item_05",
+      "image_rel_path": "evaluations/test_portrait_woman.png",
+      "category": "out_of_frame_refusal",
+      "question": "What shoes is she wearing?",
+      "expected_answer_type": "honest_refusal_out_of_frame",
+      "scene_caption": "a portrait of a woman in a blue shirt",
+      "ocr_text": ""
+    },
+    {
+      "id": "item_06",
+      "image_rel_path": "dataset/toa-heftiba-O3ymvT7Wf9U-unsplash.jpg",
+      "category": "person_hoodie_clothing",
+      "question": "What is the person wearing?",
+      "expected_answer_type": "clothing_hoodie",
+      "scene_caption": "a woman in a hoodie looking at the camera",
+      "ocr_text": ""
+    },
+    {
+      "id": "item_07",
+      "image_rel_path": "dataset/toa-heftiba-O3ymvT7Wf9U-unsplash.jpg",
+      "category": "facial_expression_neutral",
+      "question": "Is the person smiling?",
+      "expected_answer_type": "expression_neutral_cautious",
+      "scene_caption": "a woman in a hoodie looking at the camera",
+      "ocr_text": ""
+    },
+    {
+      "id": "item_08",
+      "image_rel_path": "dataset/toa-heftiba-O3ymvT7Wf9U-unsplash.jpg",
+      "category": "person_hair",
+      "question": "What color is her hair?",
+      "expected_answer_type": "hair_color",
+      "scene_caption": "a woman in a hoodie looking at the camera",
+      "ocr_text": ""
+    },
+    {
+      "id": "item_09",
+      "image_rel_path": "dataset/chad-montano-MqT0asuoIcU-unsplash.jpg",
+      "category": "food_object",
+      "question": "What food is on the table?",
+      "expected_answer_type": "food_type_and_details",
+      "scene_caption": "a pizza sitting on top of a wooden cutting board",
+      "ocr_text": ""
+    },
+    {
+      "id": "item_10",
+      "image_rel_path": "dataset/chad-montano-MqT0asuoIcU-unsplash.jpg",
+      "category": "spatial_surface",
+      "question": "What is the food sitting on?",
+      "expected_answer_type": "surface_material_and_placement",
+      "scene_caption": "a pizza sitting on top of a wooden cutting board",
+      "ocr_text": ""
+    },
+    {
+      "id": "item_11",
+      "image_rel_path": "dataset/sample-boat-400x300.png",
+      "category": "object_scene",
+      "question": "What is on the water?",
+      "expected_answer_type": "object_boat_and_water",
+      "scene_caption": "a small boat floating on the water",
+      "ocr_text": ""
+    },
+    {
+      "id": "item_12",
+      "image_rel_path": "dataset/sample-boat-400x300.png",
+      "category": "spatial_surroundings",
+      "question": "What is the setting of this image?",
+      "expected_answer_type": "environmental_surroundings",
+      "scene_caption": "a small boat floating on the water",
+      "ocr_text": ""
+    },
+    {
+      "id": "item_13",
+      "image_rel_path": "dataset/sample-clouds-400x300.jpg",
+      "category": "no_person_refusal",
+      "question": "Is the person smiling?",
+      "expected_answer_type": "honest_refusal_no_person",
+      "scene_caption": "white clouds in a blue sky",
+      "ocr_text": ""
+    },
+    {
+      "id": "item_14",
+      "image_rel_path": "dataset/sample-clouds-400x300.jpg",
+      "category": "landscape_sky",
+      "question": "What is visible in the sky?",
+      "expected_answer_type": "clouds_and_sky_colors",
+      "scene_caption": "white clouds in a blue sky",
+      "ocr_text": ""
+    },
+    {
+      "id": "item_15",
+      "image_rel_path": "evaluations/eval_v3_grounding/images/05_everyday_coffee_cup.png",
+      "category": "everyday_object",
+      "question": "What object is on the table?",
+      "expected_answer_type": "cup_and_surface",
+      "scene_caption": "a white cup on a tabletop",
+      "ocr_text": ""
+    },
+    {
+      "id": "item_16",
+      "image_rel_path": "evaluations/eval_v3_grounding/images/08_storefront_visible_text.png",
+      "category": "signage_ocr",
+      "question": "What text is written on the sign?",
+      "expected_answer_type": "visible_ocr_text",
+      "scene_caption": "a storefront with signage",
+      "ocr_text": "COFFEE & BAKERY OPEN DAILY"
+    },
+    {
+      "id": "item_17",
+      "image_rel_path": "evaluations/eval_v3_grounding/images/03_person_cropped_silhouette.png",
+      "category": "occluded_face_refusal",
+      "question": "What is the person's facial expression?",
+      "expected_answer_type": "honest_refusal_face_occluded",
+      "scene_caption": "a dark silhouette of a person standing against a sunset",
+      "ocr_text": ""
+    }
+  ]
+}

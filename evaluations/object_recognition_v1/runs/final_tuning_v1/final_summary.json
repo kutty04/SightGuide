@@ -1,0 +1,32 @@
+{
+  "status": "COMPLETED",
+  "timestamp_utc": "2026-10-15T06:17:06.691180+00:00",
+  "dataset_summary": {
+    "unique_images_processed": 1976,
+    "duplicates_filtered": 24
+  },
+  "model_performance": {
+    "mean_model_inference_ms": 86.49,
+    "p95_model_inference_ms": 226.15,
+    "mean_total_pipeline_ms": 138.89,
+    "throughput_fps": 7.15
+  },
+  "parameter_tuning_recommendation": {
+    "recommended_confidence": 0.55,
+    "recommended_nms_iou": 0.45,
+    "justification": "Confidence 0.55 provides optimal balance on CPU, filtering out high-entropy false positives while preserving 91% of true object detections with high confidence. IoU 0.45 avoids duplicate overlapping boxes."
+  },
+  "baseline_comparison_120_images": {
+    "SECONDARY_OBJECT_RECALL": 16,
+    "CATEGORY_DISAGREEMENT": 3,
+    "DETECTOR_SILENT": 76,
+    "AGREEMENT": 25,
+    "BOTH_EMPTY": 0
+  },
+  "safeguards_status": {
+    "detector_qa_enabled_by_default": false,
+    "env_flag": "SIGHTGUIDE_ENABLE_DETECTOR_QA=false",
+    "protected_artifacts_verified": true,
+    "read_only_workspace_preserved": true
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "run_id": "baseline_v1_full",
+  "timestamp": "2026-10-14T23:49:33.190475",
+  "execution_mode": "HTTP_API",
+  "sample_manifest": "D:\\SightGuide_V2\\evaluations\\object_recognition_v1\\sample_manifest.json",
+  "total_requested": 120,
+  "total_processed": 120,
+  "successful_evaluations": 120,
+  "failed_evaluations": 0,
+  "latencies_seconds": {
+    "mean": 16.999,
+    "min": 10.961,
+    "max": 44.596,
+    "median": 16.308
+  },
+  "candidate_diversity": {
+    "mean_type_token_ratio": 0.5086,
+    "mean_pairwise_jaccard": 0.3076
+  },
+  "stratum_breakdown": {
+    "L_landscape": {
+      "count": 22,
+      "success": 22,
+      "failed": 0
+    },
+    "RGB_landscape": {
+      "count": 70,
+      "success": 70,
+      "failed": 0
+    },
+    "L_portrait": {
+      "count": 7,
+      "success": 7,
+      "failed": 0
+    },
+    "RGB_portrait": {
+      "count": 18,
+      "success": 18,
+      "failed": 0
+    },
+    "RGB_square": {
+      "count": 2,
+      "success": 2,
+      "failed": 0
+    },
+    "L_square": {
+      "count": 1,
+      "success": 1,
+      "failed": 0
+    }
+  }
+}

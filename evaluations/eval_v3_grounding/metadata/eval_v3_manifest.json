@@ -1,0 +1,185 @@
+{
+  "version": "eval_v3_grounding",
+  "description": "SightGuide V2 Grounding & Anti-Hallucination Evaluation Suite",
+  "total_test_cases": 8,
+  "records": [
+    {
+      "id": "v3_001_portrait_woman",
+      "filename": "01_portrait_woman_blue_shirt.png",
+      "category": "cropped_portrait",
+      "source": "User-supplied test asset (Session upload media_1791942186672_e3a0bdce.png)",
+      "provenance": "Original user uploaded illustration",
+      "license": "Evaluation test use",
+      "visibly_supported": [
+        "young woman with wavy dark/black hair",
+        "light blue collared shirt",
+        "pearl earrings",
+        "thin chain necklace",
+        "cropped bust/upper-torso portrait",
+        "digital 3D avatar/illustration style",
+        "neutral gray background"
+      ],
+      "known_unsupported_hallucinations": [
+        "jeans",
+        "blue jeans",
+        "pants",
+        "trousers",
+        "skirts",
+        "shoes",
+        "legs",
+        "in the sims game",
+        "the sims family",
+        "disney movie"
+      ],
+      "sha256": "08ccc2478e1981380471757f5aa327275b4e14e0b699943840022e279746b20e",
+      "dimensions": "520x505",
+      "file_size_bytes": 202780
+    },
+    {
+      "id": "v3_002_cartoon_avatar",
+      "filename": "02_cartoon_avatar.png",
+      "category": "illustration",
+      "source": "SightGuide Eval V2 dataset",
+      "provenance": "Locally synthesized digital avatar asset",
+      "license": "Project internal CC-BY-4.0",
+      "visibly_supported": [
+        "cartoon character face",
+        "expressive eyes",
+        "digital illustration art style"
+      ],
+      "known_unsupported_hallucinations": [
+        "specific movie titles",
+        "licensed video game franchises",
+        "photographic camera settings"
+      ],
+      "sha256": "0f7dfc7eab0b22c1a5bfa0c6738e4b0fdfe3c0c140d9fcf157f1d25c26f3c233",
+      "dimensions": "400x300",
+      "file_size_bytes": 1976
+    },
+    {
+      "id": "v3_003_person_silhouette",
+      "filename": "03_person_cropped_silhouette.png",
+      "category": "partially_visible_people",
+      "source": "SightGuide Eval V2 dataset",
+      "provenance": "Locally synthesized silhouette asset",
+      "license": "Project internal CC-BY-4.0",
+      "visibly_supported": [
+        "dark silhouette of a person",
+        "profile outline"
+      ],
+      "known_unsupported_hallucinations": [
+        "facial features",
+        "specific clothing colors",
+        "fabric textures",
+        "eye color"
+      ],
+      "sha256": "896228802bd305a0c4bd55ed7bb2ed8971ea9b44049e0ab4e20c306ed71c0ad1",
+      "dimensions": "400x300",
+      "file_size_bytes": 1362
+    },
+    {
+      "id": "v3_004_domestic_animal",
+      "filename": "04_domestic_cat_chair.png",
+      "category": "animals_surroundings",
+      "source": "SightGuide Eval V2 dataset",
+      "provenance": "Locally synthesized animal scene",
+      "license": "Project internal CC-BY-4.0",
+      "visibly_supported": [
+        "domestic cat / feline",
+        "indoor chair or surface"
+      ],
+      "known_unsupported_hallucinations": [
+        "dog",
+        "outdoor lawn",
+        "leash",
+        "wild predator context"
+      ],
+      "sha256": "68bec45763f8f961ffff1421b7d953472e480b02097eca9890b443a9433d9115",
+      "dimensions": "400x300",
+      "file_size_bytes": 1750
+    },
+    {
+      "id": "v3_005_everyday_objects",
+      "filename": "05_everyday_coffee_cup.png",
+      "category": "everyday_objects",
+      "source": "SightGuide Eval V2 dataset",
+      "provenance": "Locally synthesized tabletop object asset",
+      "license": "Project internal CC-BY-4.0",
+      "visibly_supported": [
+        "tabletop surface",
+        "mug or cup",
+        "simple domestic setup"
+      ],
+      "known_unsupported_hallucinations": [
+        "people drinking",
+        "restaurant kitchen",
+        "busy crowd"
+      ],
+      "sha256": "4fc813af736e8fba4f7dcf3427a92bfaaba2a75de5905767a7a475a8220d3419",
+      "dimensions": "400x300",
+      "file_size_bytes": 1647
+    },
+    {
+      "id": "v3_006_cluttered_desk",
+      "filename": "06_indoor_cluttered_desk.png",
+      "category": "indoor_multi_object",
+      "source": "SightGuide Eval V2 dataset",
+      "provenance": "Locally synthesized interior workspace asset",
+      "license": "Project internal CC-BY-4.0",
+      "visibly_supported": [
+        "desk or table surface",
+        "multiple desktop objects",
+        "indoor lighting"
+      ],
+      "known_unsupported_hallucinations": [
+        "office workers",
+        "outdoor view",
+        "specific high-end computer brands"
+      ],
+      "sha256": "f029948150637ba72ed6bf5e6cb0b1660ea1118efabee8936a1fe7719ea814a0",
+      "dimensions": "400x300",
+      "file_size_bytes": 1362
+    },
+    {
+      "id": "v3_007_ambiguous_illustration",
+      "filename": "07_ambiguous_illustration.png",
+      "category": "ambiguous_abstract",
+      "source": "SightGuide Eval V2 dataset",
+      "provenance": "Locally synthesized abstract visual asset",
+      "license": "Project internal CC-BY-4.0",
+      "visibly_supported": [
+        "geometric abstract shapes",
+        "stylized color gradients"
+      ],
+      "known_unsupported_hallucinations": [
+        "photorealistic human face",
+        "landscape mountains",
+        "real-world vehicles"
+      ],
+      "sha256": "dcd3f472270182315ba4200f4ff4e22b74e05e415fa64387908e16f57313e87b",
+      "dimensions": "400x300",
+      "file_size_bytes": 4655
+    },
+    {
+      "id": "v3_008_visible_text_sign",
+      "filename": "08_storefront_visible_text.png",
+      "category": "images_with_visible_text",
+      "source": "SightGuide Eval V3 text benchmark generator",
+      "provenance": "Locally rendered storefront signboard with explicit text",
+      "license": "Project internal CC-BY-4.0",
+      "visibly_supported": [
+        "signboard with text 'DOWNTOWN BAKERY & CAFE'",
+        "coffee cup symbol / illustration",
+        "storefront palette"
+      ],
+      "known_unsupported_hallucinations": [
+        "incorrectly transcribed shop names",
+        "outdoor traffic",
+        "pedestrians entering"
+      ],
+      "sha256": "076965e2d509f8e9a61f7b21d059df9fc761d06dc89a0fe1d3cd6aa85fbb5ed9",
+      "dimensions": "512x384",
+      "file_size_bytes": 3735
+    }
+  ]
+}

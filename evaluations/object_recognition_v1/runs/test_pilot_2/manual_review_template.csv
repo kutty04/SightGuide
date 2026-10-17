@@ -1,0 +1,3 @@
+filename,stratum,anchor_caption,diverse_caption,fused_caption,extracted_entities,ocr_text,human_verified_visible_objects,human_missing_salient_objects,human_hallucinated_false_claims,human_grounding_rating_1_to_5,human_reviewer_notes
+image-1001.jpg,L_landscape,a black and white image of a dog,a black and white dog in the woods,a black and white dog in the woods,"black and, white dog, in the, woods",,,,,,
+image-1011.jpg,RGB_landscape,two lipsticks sitting on top of a red cloth,three red lipsticks sitting on a table,two lipsticks sitting on top of a red cloth,"two lipsticks, sitting on, top of, a red, cloth",,,,,,

@@ -1,0 +1,9 @@
+{
+  "total_evaluated_items": 17,
+  "items_with_added_useful_details": 9,
+  "items_preserving_honest_refusal": 3,
+  "mean_latency_baseline_seconds": 4.017,
+  "mean_latency_improved_seconds": 17.695,
+  "latency_overhead_seconds": 13.678,
+  "results_csv": "eval_v4_descriptiveness_results.csv"
+}

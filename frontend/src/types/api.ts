@@ -7,6 +7,7 @@ export interface HealthResponse {
   status: string;
   version: string;
   blip_available: boolean;
+  ocr_available?: boolean;
   groq_configured: boolean;
   active_device: string;
 }
@@ -16,6 +17,9 @@ export interface CandidateCaption {
   caption: string;
   clip_score: number;
   normalized_clip_score?: number;
+  raw_loss?: number;
+  scoring_method?: string;
+  confidence_warning?: boolean;
 }
 
 export interface SelectedPair {
@@ -30,6 +34,8 @@ export interface SelectedPair {
   pair_diversity: number;
   diverged_from_control: boolean;
   selection_notes: string;
+  scoring_method?: string;
+  decoding_strategy?: string;
 }
 
 export interface FusionResult {
@@ -47,6 +53,8 @@ export interface CaptionResponse {
   candidates: CandidateCaption[];
   selected_pair: SelectedPair;
   fusion: FusionResult;
+  scoring_method?: string;
+  decoding_strategy?: string;
   execution_time_seconds: number;
 }
 
@@ -60,6 +68,9 @@ export interface ComparisonResponse {
   proposed_fusion: FusionResult;
   is_divergent: boolean;
   pair_diversity_delta: number;
+  scoring_method?: string;
+  decoding_strategy?: string;
+  confidence_warning?: string | null;
   plain_language_explanation: string;
   execution_time_seconds: number;
 }
@@ -89,4 +100,134 @@ export interface BenchmarkSummaryResponse {
   historical_failure_count: number;
   pending_live_count: number;
   benchmark_records: BenchmarkImageRecord[];
+}
+
+export interface OCRLine {
+  text: string;
+  confidence: number;
+  box?: number[][];
+  reading_order?: number;
+}
+
+export interface OCRResponse {
+  filename: string;
+  text: string;
+  has_text: boolean;
+  lines: OCRLine[];
+  message?: string;
+  engine: string;
+  execution_time_seconds: number;
+}
+
+export interface DecodingComparisonRow {
+  image_id: string;
+  category: string;
+  split: string;
+  decoding_strategy: string;
+  total_time_seconds: string | number;
+  generation_time_seconds: string | number;
+  scoring_time_seconds: string | number;
+  candidate_pool_size: string | number;
+  pool_diversity: string | number;
+  pool_distinct_1_ratio?: string | number;
+  pool_distinct_2_ratio?: string | number;
+  pool_avg_caption_len?: string | number;
+  pool_vocab_size?: string | number;
+  pool_repetition_rate: string | number;
+  anchor_caption: string;
+  anchor_score: string | number;
+  control_c2: string;
+  control_score: string | number;
+  proposed_c2: string;
+  proposed_score: string | number;
+  proposed_rank2_original_rank: string | number;
+  is_divergent: string | boolean;
+  pair_diversity_delta: string | number;
+  scoring_method: string;
+}
+
+export interface DecodingComparisonMetadata {
+  experiment_name: string;
+  timestamp_utc: string;
+  total_images_evaluated: number;
+  model_checkpoint: string;
+  scoring_method: string;
+  hardware_environment: string;
+  methodological_notes?: {
+    repetition_rate: string;
+    unconstrained_diversity_metrics: string;
+  };
+  results_by_strategy: {
+    sample: {
+      mean_latency_seconds: number;
+      mean_pool_diversity: number;
+      mean_distinct_1_ratio?: number;
+      mean_distinct_2_ratio?: number;
+      mean_caption_length?: number;
+      mean_repetition_rate: number;
+      divergent_pairs_count: number;
+      divergence_percentage: number;
+    };
+    beam: {
+      mean_latency_seconds: number;
+      mean_pool_diversity: number;
+      mean_distinct_1_ratio?: number;
+      mean_distinct_2_ratio?: number;
+      mean_caption_length?: number;
+      mean_repetition_rate: number;
+      divergent_pairs_count: number;
+      divergence_percentage: number;
+    };
+  };
+}
+
+export interface ResultsComparisonResponse {
+  metadata: DecodingComparisonMetadata;
+  rows: DecodingComparisonRow[];
+  total_records: number;
+  source_file: string;
+}
+
+export interface DatasetManifestRecord {
+  image_id: string;
+  filename: string;
+  category: string;
+  split: string;
+  dimensions: string;
+  sha256: string;
+  source: string;
+  license: string;
+  annotation_status: string;
+}
+
+export interface DatasetManifestResponse {
+  total_images: number;
+  categories: Record<string, number>;
+  splits: Record<string, number>;
+  records: DatasetManifestRecord[];
+}
+
+export interface QAHistoryItem {
+  question: string;
+  answer: string;
+}
+
+export interface QARequest {
+  question: string;
+  scene_caption?: string | null;
+  ocr_text?: string | null;
+  history?: QAHistoryItem[];
+  image_data?: string | null;
+}
+
+export interface QAResponse {
+  question: string;
+  answer: string;
+  capability: string;
+  is_uncertain: boolean;
+  grounded_sources: string[];
+  evidence_used: string[];
+  limitation_notice?: string;
+  model_name?: string | null;
+  execution_time_seconds: number;
 }

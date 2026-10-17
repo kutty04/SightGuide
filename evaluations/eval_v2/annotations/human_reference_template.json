@@ -1,0 +1,3278 @@
+{
+  "dataset_name": "SightGuide Eval-V2 Ground-Truth Human Reference Captions",
+  "version": "2.0.0",
+  "last_updated_utc": "2026-10-13T17:10:42.078780+00:00",
+  "total_images": 96,
+  "annotation_status": "PENDING_HUMAN_EVALUATION",
+  "guidelines": {
+    "num_references_per_image": 5,
+    "instructions": "Each reference caption must be written by a human annotator describing the primary visual content without hallucination.",
+    "synthetic_caption_generation": "FORBIDDEN - all references must be authentic human evaluations."
+  },
+  "annotations": {
+    "eval_elevate-nYgy58eb9aw-unsplash": {
+      "filename": "eval_elevate-nYgy58eb9aw-unsplash.jpg",
+      "category": "indoor_and_cluttered",
+      "split": "dev",
+      "dimensions": "3036x2162",
+      "sha256": "d3fad1d3953a6cdb0037d09785880753bd9d958473205f3f4140e17ccfbf2d6e",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_toa-heftiba-O3ymvT7Wf9U-unsplash": {
+      "filename": "eval_toa-heftiba-O3ymvT7Wf9U-unsplash.jpg",
+      "category": "people_and_interactions",
+      "split": "held_out",
+      "dimensions": "2459x3688",
+      "sha256": "2903065abcd525ca1952b5506b4b2275713f372a2a53f1485a61d9cc2e0f5836",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_person_silhouette": {
+      "filename": "eval_person_silhouette.png",
+      "category": "people_and_interactions",
+      "split": "dev",
+      "dimensions": "400x300",
+      "sha256": "896228802bd305a0c4bd55ed7bb2ed8971ea9b44049e0ab4e20c306ed71c0ad1",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_cartoon_avatar": {
+      "filename": "eval_cartoon_avatar.png",
+      "category": "cartoons_and_illustrations",
+      "split": "held_out",
+      "dimensions": "400x300",
+      "sha256": "0f7dfc7eab0b22c1a5bfa0c6738e4b0fdfe3c0c140d9fcf157f1d25c26f3c233",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_domestic_animal": {
+      "filename": "eval_domestic_animal.png",
+      "category": "animals_and_wildlife",
+      "split": "dev",
+      "dimensions": "400x300",
+      "sha256": "68bec45763f8f961ffff1421b7d953472e480b02097eca9890b443a9433d9115",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_everyday_objects": {
+      "filename": "eval_everyday_objects.png",
+      "category": "everyday_objects",
+      "split": "held_out",
+      "dimensions": "400x300",
+      "sha256": "4fc813af736e8fba4f7dcf3427a92bfaaba2a75de5905767a7a475a8220d3419",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_cluttered_desk": {
+      "filename": "eval_cluttered_desk.png",
+      "category": "indoor_and_cluttered",
+      "split": "dev",
+      "dimensions": "400x300",
+      "sha256": "f029948150637ba72ed6bf5e6cb0b1660ea1118efabee8936a1fe7719ea814a0",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_ambiguous_distractor": {
+      "filename": "eval_ambiguous_distractor.png",
+      "category": "difficult_and_ambiguous",
+      "split": "held_out",
+      "dimensions": "400x300",
+      "sha256": "dcd3f472270182315ba4200f4ff4e22b74e05e415fa64387908e16f57313e87b",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_009_peop": {
+      "filename": "eval_v2_009_peop.jpg",
+      "category": "people_and_interactions",
+      "split": "dev",
+      "dimensions": "800x600",
+      "sha256": "7fac60ca30197368992e9e5291b31002dc11127c33278f458b67d9834cf63e8b",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_010_peop": {
+      "filename": "eval_v2_010_peop.jpg",
+      "category": "people_and_interactions",
+      "split": "held_out",
+      "dimensions": "800x531",
+      "sha256": "174bf097ddcd158902bf21edae7c9871fe0221e4c679eeef4fa37a1d68db9a06",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_011_peop": {
+      "filename": "eval_v2_011_peop.jpg",
+      "category": "people_and_interactions",
+      "split": "dev",
+      "dimensions": "800x533",
+      "sha256": "f66270364424ad2fea39c56df1507ad78d6bc1db1217f3636dab2d7fb9aba66d",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_012_peop": {
+      "filename": "eval_v2_012_peop.jpg",
+      "category": "people_and_interactions",
+      "split": "held_out",
+      "dimensions": "800x529",
+      "sha256": "47dbfb7c1c5adaf2b4b65ecbaf2fb19c644ee72df99b2247c74b4dcf89809e96",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_013_peop": {
+      "filename": "eval_v2_013_peop.jpg",
+      "category": "people_and_interactions",
+      "split": "dev",
+      "dimensions": "800x529",
+      "sha256": "57b5776e6400ffb10aabac5af8f95182ee156d55253d0502c358d164f0bff6d1",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_014_peop": {
+      "filename": "eval_v2_014_peop.jpg",
+      "category": "people_and_interactions",
+      "split": "held_out",
+      "dimensions": "533x800",
+      "sha256": "8823cbb1b72fbdddcea5a1b04eeb2fe363ed4633bae2470357e976c9a1d4d1b8",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_015_peop": {
+      "filename": "eval_v2_015_peop.jpg",
+      "category": "people_and_interactions",
+      "split": "dev",
+      "dimensions": "799x603",
+      "sha256": "c0b07ef73d4965bbd6768b1ffe746c1ee9b85f0d79c49ce9552fd27c2b5a9392",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_016_peop": {
+      "filename": "eval_v2_016_peop.jpg",
+      "category": "people_and_interactions",
+      "split": "held_out",
+      "dimensions": "800x531",
+      "sha256": "775dd7a459778cbaa55b1fe5d674e2e91b96d8e49b3bebd22e885257fe74e0dd",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_017_peop": {
+      "filename": "eval_v2_017_peop.jpg",
+      "category": "people_and_interactions",
+      "split": "dev",
+      "dimensions": "800x533",
+      "sha256": "ceaa001c541adabcc8f0d045c8fb9c6cd6d9194151ab79aaf295fec95bd14fc3",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_018_peop": {
+      "filename": "eval_v2_018_peop.jpg",
+      "category": "people_and_interactions",
+      "split": "held_out",
+      "dimensions": "800x533",
+      "sha256": "01020080684b9505b43e092d1d8b3c2bff21cdd551af8d248978b1281cee043a",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_019_peop": {
+      "filename": "eval_v2_019_peop.jpg",
+      "category": "people_and_interactions",
+      "split": "dev",
+      "dimensions": "590x800",
+      "sha256": "c019b53991b42e8e940e750e0192792545ec7d05b4e0544b858cbc8650561898",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_020_peop": {
+      "filename": "eval_v2_020_peop.jpg",
+      "category": "people_and_interactions",
+      "split": "held_out",
+      "dimensions": "533x800",
+      "sha256": "4e25fa63e66b41fd670d8455775b6d78cd14be1781370d046f4811d159c07024",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_021_peop": {
+      "filename": "eval_v2_021_peop.jpg",
+      "category": "people_and_interactions",
+      "split": "dev",
+      "dimensions": "800x532",
+      "sha256": "0ccc01f95f4587ae4716c55bb511e7875a22fc3c53e51c3f1ab4d0b17b9bd326",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_022_peop": {
+      "filename": "eval_v2_022_peop.jpg",
+      "category": "people_and_interactions",
+      "split": "held_out",
+      "dimensions": "576x800",
+      "sha256": "e80de17482b55b85907b50da8a38043153b3e5c514440292f249a9b6195c97df",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_023_cart": {
+      "filename": "eval_v2_023_cart.jpg",
+      "category": "cartoons_and_illustrations",
+      "split": "dev",
+      "dimensions": "800x481",
+      "sha256": "7789ddc21a9e486c7c1268b93eac4997fef39f5fcc1ecffba82fa3acab8d3246",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_024_cart": {
+      "filename": "eval_v2_024_cart.jpg",
+      "category": "cartoons_and_illustrations",
+      "split": "held_out",
+      "dimensions": "800x700",
+      "sha256": "74046d1ac8b8f9c52931bae0860a88531f088aa4f8b2143d03aab79fccbd844d",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_025_cart": {
+      "filename": "eval_v2_025_cart.jpg",
+      "category": "cartoons_and_illustrations",
+      "split": "dev",
+      "dimensions": "655x800",
+      "sha256": "b090f3ddd609ad4fa24c1fdd0815d98bea2a8d50d944dabb8e6ce18c571df72d",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_026_cart": {
+      "filename": "eval_v2_026_cart.jpg",
+      "category": "cartoons_and_illustrations",
+      "split": "held_out",
+      "dimensions": "800x568",
+      "sha256": "dc96bf948f0eaae65440c45e50c8be2b449377a39092b0e027750cd96afbbc9e",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_027_cart": {
+      "filename": "eval_v2_027_cart.jpg",
+      "category": "cartoons_and_illustrations",
+      "split": "dev",
+      "dimensions": "800x529",
+      "sha256": "b3ff5de513ef732e79ca3c3a98d36ab228b5198a5d52a3f6cfa31318b5648480",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_028_cart": {
+      "filename": "eval_v2_028_cart.jpg",
+      "category": "cartoons_and_illustrations",
+      "split": "held_out",
+      "dimensions": "671x800",
+      "sha256": "9e39ddde3c8fa826e5b22b931c37628f46b30b95fa8763cd039dbb70321dd3d0",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_029_cart": {
+      "filename": "eval_v2_029_cart.jpg",
+      "category": "cartoons_and_illustrations",
+      "split": "dev",
+      "dimensions": "800x575",
+      "sha256": "fbed3de2c475de85f6e902fad50cd2c7479a52c88700ff92cafda9e348dc4ceb",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_030_cart": {
+      "filename": "eval_v2_030_cart.jpg",
+      "category": "cartoons_and_illustrations",
+      "split": "held_out",
+      "dimensions": "225x225",
+      "sha256": "92477540156e1ac6aa9ad2924044dc72888a46600f09b00af6d275932f506945",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_031_cart": {
+      "filename": "eval_v2_031_cart.jpg",
+      "category": "cartoons_and_illustrations",
+      "split": "dev",
+      "dimensions": "442x800",
+      "sha256": "32e93aa96a156ca7e0dc0bc5246cd1f637257e29d1ca2e8b06f00b1af03170a3",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_032_cart": {
+      "filename": "eval_v2_032_cart.jpg",
+      "category": "cartoons_and_illustrations",
+      "split": "held_out",
+      "dimensions": "550x800",
+      "sha256": "e03aa0f447ee64041f9695fbf574ccd0be291ed0d4b5ccdb00f150fc3932c983",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_033_cart": {
+      "filename": "eval_v2_033_cart.jpg",
+      "category": "cartoons_and_illustrations",
+      "split": "dev",
+      "dimensions": "555x800",
+      "sha256": "f9c2687be9de2595750bf81b317bdaee4d2f09b915f0d5f745db0da57ab4ab48",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_034_cart": {
+      "filename": "eval_v2_034_cart.jpg",
+      "category": "cartoons_and_illustrations",
+      "split": "held_out",
+      "dimensions": "800x623",
+      "sha256": "7d8374a0bfbdd3b9a846278d2bacc895038ad92a71e98c696c7ea78553f09ad3",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_035_cart": {
+      "filename": "eval_v2_035_cart.jpg",
+      "category": "cartoons_and_illustrations",
+      "split": "dev",
+      "dimensions": "609x800",
+      "sha256": "6ea37a16f67175ce2a0fdcbc410047415e24f1c327273e13a6549434695883b8",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_036_cart": {
+      "filename": "eval_v2_036_cart.jpg",
+      "category": "cartoons_and_illustrations",
+      "split": "held_out",
+      "dimensions": "800x568",
+      "sha256": "8c4fc8afb44065da6607f1e6adb63880ed31560520b88e853a760890862ef262",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_037_cart": {
+      "filename": "eval_v2_037_cart.jpg",
+      "category": "cartoons_and_illustrations",
+      "split": "dev",
+      "dimensions": "565x800",
+      "sha256": "54e93b681648ec8d4c22c633d0ade1c45ea757a71f0eba51789548ae01e45e27",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_038_anim": {
+      "filename": "eval_v2_038_anim.jpg",
+      "category": "animals_and_wildlife",
+      "split": "held_out",
+      "dimensions": "533x800",
+      "sha256": "d7c0d8e0ba754823c9ca4de97b4b2bec469e085d3aa6a7a8b2612e129c874b79",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_039_anim": {
+      "filename": "eval_v2_039_anim.jpg",
+      "category": "animals_and_wildlife",
+      "split": "dev",
+      "dimensions": "800x533",
+      "sha256": "233836d9a57c9cdf9ec93343a3a9d5c304339091d10168190cef656396df9ca7",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_040_anim": {
+      "filename": "eval_v2_040_anim.jpg",
+      "category": "animals_and_wildlife",
+      "split": "held_out",
+      "dimensions": "800x533",
+      "sha256": "d9c52b0af47be33dcf5fccee0aa2b7ff49d8c0238b5421d88f1db4e398a4bf6a",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_041_anim": {
+      "filename": "eval_v2_041_anim.jpg",
+      "category": "animals_and_wildlife",
+      "split": "dev",
+      "dimensions": "800x533",
+      "sha256": "887f65795a8715c893307560a29caeaf15859a76c7892d2bd89a93a9645fb7ef",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_042_anim": {
+      "filename": "eval_v2_042_anim.jpg",
+      "category": "animals_and_wildlife",
+      "split": "held_out",
+      "dimensions": "800x600",
+      "sha256": "26cefc79ce9a65c33fc31e114e2d9e63c7ded8fa880eee91f37e86e2fc63c829",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_043_anim": {
+      "filename": "eval_v2_043_anim.jpg",
+      "category": "animals_and_wildlife",
+      "split": "dev",
+      "dimensions": "800x600",
+      "sha256": "8f1d6af242699c4e50611a9f2bb5349e0e9e8964a5f01a3a97fb626e9f7e26ab",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_044_anim": {
+      "filename": "eval_v2_044_anim.jpg",
+      "category": "animals_and_wildlife",
+      "split": "held_out",
+      "dimensions": "640x800",
+      "sha256": "54d1a3abc5336bbfca2a3c78f33d3b0b6fe984537a453d0dc484e4be07694a18",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_045_anim": {
+      "filename": "eval_v2_045_anim.jpg",
+      "category": "animals_and_wildlife",
+      "split": "dev",
+      "dimensions": "800x800",
+      "sha256": "83b2d2862450c92058b6976638ff9972901a2f5dfae6427d310acc6daee6dfe4",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_046_anim": {
+      "filename": "eval_v2_046_anim.jpg",
+      "category": "animals_and_wildlife",
+      "split": "held_out",
+      "dimensions": "800x644",
+      "sha256": "181a3ae14e867462ef62a94070c40dae3915a819390ac2af5e1db764ee32975e",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_047_anim": {
+      "filename": "eval_v2_047_anim.jpg",
+      "category": "animals_and_wildlife",
+      "split": "dev",
+      "dimensions": "800x533",
+      "sha256": "cf73135f1eb92af7b15b1d6a650720927c02db4a66a1a5f1a60b66298a3e107f",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_048_anim": {
+      "filename": "eval_v2_048_anim.jpg",
+      "category": "animals_and_wildlife",
+      "split": "held_out",
+      "dimensions": "800x600",
+      "sha256": "282855c8b32e544bc0a9f5ae5a393e70e800e7752dfda9e1c38463e541228591",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_049_anim": {
+      "filename": "eval_v2_049_anim.jpg",
+      "category": "animals_and_wildlife",
+      "split": "dev",
+      "dimensions": "800x599",
+      "sha256": "59f550d0de6b4e47c8d731131769ba37eb55c750c0c4309d2eda54ca67fd6f90",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_050_anim": {
+      "filename": "eval_v2_050_anim.jpg",
+      "category": "animals_and_wildlife",
+      "split": "held_out",
+      "dimensions": "800x533",
+      "sha256": "c8f81994d857b1d4d71c2bff2b7338a1dcec973e28d1b43e55c97af831008fd3",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_051_anim": {
+      "filename": "eval_v2_051_anim.jpg",
+      "category": "animals_and_wildlife",
+      "split": "dev",
+      "dimensions": "800x800",
+      "sha256": "b13f6ceb12f2ec808cf560f3a7f6ee75426016d2bebbe24d203906dd17950c54",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_052_anim": {
+      "filename": "eval_v2_052_anim.jpg",
+      "category": "animals_and_wildlife",
+      "split": "held_out",
+      "dimensions": "538x800",
+      "sha256": "9b9d7e20dc7ad96023aab565acbacd2f51134e0ed6a021ebf7e5507abf8f38e0",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_053_ever": {
+      "filename": "eval_v2_053_ever.jpg",
+      "category": "everyday_objects",
+      "split": "dev",
+      "dimensions": "463x686",
+      "sha256": "a0aceb8da6af24730126ddf714367c7ef57b2f575420d68e860d62c3d53ba9b5",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_054_ever": {
+      "filename": "eval_v2_054_ever.jpg",
+      "category": "everyday_objects",
+      "split": "held_out",
+      "dimensions": "800x533",
+      "sha256": "cd7dc3f8ebad2ed06761df336cb5219136bb4fb82c096518e11497725658aa7a",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_055_ever": {
+      "filename": "eval_v2_055_ever.jpg",
+      "category": "everyday_objects",
+      "split": "dev",
+      "dimensions": "760x605",
+      "sha256": "4829e23692907ff99137dab712a16881239230bda39a73bc482eff13169287c4",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_056_ever": {
+      "filename": "eval_v2_056_ever.jpg",
+      "category": "everyday_objects",
+      "split": "held_out",
+      "dimensions": "800x533",
+      "sha256": "b37b53f48169160be023b5c2755bb13686a50446249162c6aee716857120fad2",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_057_ever": {
+      "filename": "eval_v2_057_ever.jpg",
+      "category": "everyday_objects",
+      "split": "dev",
+      "dimensions": "589x800",
+      "sha256": "caf9cac0ff418057c40aae02c64fada90e5d6b5276a90a07dc9d43bfe06755ed",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_058_ever": {
+      "filename": "eval_v2_058_ever.jpg",
+      "category": "everyday_objects",
+      "split": "held_out",
+      "dimensions": "750x497",
+      "sha256": "2208942594b936c463895259ece6f280447d239f234deac5743e8e06d3dd8169",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_059_ever": {
+      "filename": "eval_v2_059_ever.jpg",
+      "category": "everyday_objects",
+      "split": "dev",
+      "dimensions": "800x529",
+      "sha256": "a1fe930181866fef181e2ce71eb6407526ebe4251bd43e202d36d571fb223fbc",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_060_ever": {
+      "filename": "eval_v2_060_ever.jpg",
+      "category": "everyday_objects",
+      "split": "held_out",
+      "dimensions": "576x182",
+      "sha256": "b72f2591f003c51d1fe35a58d97c01ac96f8475815f0024912e327fa5a393b62",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_061_ever": {
+      "filename": "eval_v2_061_ever.jpg",
+      "category": "everyday_objects",
+      "split": "dev",
+      "dimensions": "312x800",
+      "sha256": "a4c48217fae2295037e1f17fba062b8fa2a7ef3bf069817432e14967abd0247c",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_062_ever": {
+      "filename": "eval_v2_062_ever.jpg",
+      "category": "everyday_objects",
+      "split": "held_out",
+      "dimensions": "595x800",
+      "sha256": "97f85ab5750ec75274acf3da733edc5858e47041520815fa4c0437102e9e66e0",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_063_ever": {
+      "filename": "eval_v2_063_ever.jpg",
+      "category": "everyday_objects",
+      "split": "dev",
+      "dimensions": "450x800",
+      "sha256": "8183ef5eca7633c10e53bd35cb33b976c14bcf122d670bf9fe3137cfe6eac52c",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_064_ever": {
+      "filename": "eval_v2_064_ever.jpg",
+      "category": "everyday_objects",
+      "split": "held_out",
+      "dimensions": "549x800",
+      "sha256": "5efffe8eaf110736b9c4ed098a6d91b7c97f94e1cf1714059bdeb7b8098a8607",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_065_ever": {
+      "filename": "eval_v2_065_ever.jpg",
+      "category": "everyday_objects",
+      "split": "dev",
+      "dimensions": "800x533",
+      "sha256": "fb4b426a3722ad9028f95ee3ab6b109451a09fe7e26a41d92c613d77b9c32884",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_066_ever": {
+      "filename": "eval_v2_066_ever.jpg",
+      "category": "everyday_objects",
+      "split": "held_out",
+      "dimensions": "800x600",
+      "sha256": "1c4fc71a01d79f735014aa1957e97e06bbee0d1a2e6e1b73fc25b7233260cb02",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_067_ever": {
+      "filename": "eval_v2_067_ever.jpg",
+      "category": "everyday_objects",
+      "split": "dev",
+      "dimensions": "800x600",
+      "sha256": "fec03645b5254a508cba9cbd46fc080d0247da6d3ac7b669d7a462ecb7f5365c",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_068_indo": {
+      "filename": "eval_v2_068_indo.jpg",
+      "category": "indoor_and_cluttered",
+      "split": "held_out",
+      "dimensions": "600x800",
+      "sha256": "91e4529d15b53b68c8c0a81691ea32f8e252a8b8494f0178e2363831fb6f87ec",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_069_indo": {
+      "filename": "eval_v2_069_indo.jpg",
+      "category": "indoor_and_cluttered",
+      "split": "dev",
+      "dimensions": "800x600",
+      "sha256": "4bea746a5ffda1f8148902431073c2d4b769fe6a647a0a86ccae8f2c443d5b42",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_070_indo": {
+      "filename": "eval_v2_070_indo.jpg",
+      "category": "indoor_and_cluttered",
+      "split": "held_out",
+      "dimensions": "800x533",
+      "sha256": "fd6f744fa61e07e031ce887d75c8eb320ea6f60a38f1a79e05fe8129e6fb8231",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_071_indo": {
+      "filename": "eval_v2_071_indo.jpg",
+      "category": "indoor_and_cluttered",
+      "split": "dev",
+      "dimensions": "800x556",
+      "sha256": "42aa2022193a7f54687ca2491780204b65b43b5a467a03cbe914389b51532a6c",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_072_indo": {
+      "filename": "eval_v2_072_indo.jpg",
+      "category": "indoor_and_cluttered",
+      "split": "held_out",
+      "dimensions": "800x600",
+      "sha256": "d1e4973e1f36b858a827cd1ec0a02f491a3f81f239e7f5e261431006f72700be",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_073_indo": {
+      "filename": "eval_v2_073_indo.jpg",
+      "category": "indoor_and_cluttered",
+      "split": "dev",
+      "dimensions": "800x600",
+      "sha256": "dbc596eb27984a6dabad90aaea4d965c5dd7922819899d3f347738715b8f8924",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_074_indo": {
+      "filename": "eval_v2_074_indo.jpg",
+      "category": "indoor_and_cluttered",
+      "split": "held_out",
+      "dimensions": "800x466",
+      "sha256": "1716895c996efff1e1651106b6ef27b48c99f83b7e78e6f3acd5820728e29a80",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_075_indo": {
+      "filename": "eval_v2_075_indo.jpg",
+      "category": "indoor_and_cluttered",
+      "split": "dev",
+      "dimensions": "800x450",
+      "sha256": "de35c587af196326d6bdf642f86105c841b5ad8dc9b154237d27a975c98db2ff",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_076_indo": {
+      "filename": "eval_v2_076_indo.jpg",
+      "category": "indoor_and_cluttered",
+      "split": "held_out",
+      "dimensions": "800x667",
+      "sha256": "559e5c80bf49a2ceafe920651d8e2aa150be78814d693b5e3b09ddb4acab8892",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_077_indo": {
+      "filename": "eval_v2_077_indo.jpg",
+      "category": "indoor_and_cluttered",
+      "split": "dev",
+      "dimensions": "600x800",
+      "sha256": "8c0a6aa36561a254fc9ceb0a076c7cd67543c86ab2ed6bc1ae04759517e233d9",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_078_indo": {
+      "filename": "eval_v2_078_indo.jpg",
+      "category": "indoor_and_cluttered",
+      "split": "held_out",
+      "dimensions": "800x533",
+      "sha256": "120411b180a999f2ddede27cf3324f2b588cf6262eb26398ca51367bcfed1852",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_079_indo": {
+      "filename": "eval_v2_079_indo.jpg",
+      "category": "indoor_and_cluttered",
+      "split": "dev",
+      "dimensions": "800x533",
+      "sha256": "4aaaa5a213d4f5110739e39f6f1c9a6cc3e28d88d8969116fe8a28124653fa4f",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_080_indo": {
+      "filename": "eval_v2_080_indo.jpg",
+      "category": "indoor_and_cluttered",
+      "split": "held_out",
+      "dimensions": "800x533",
+      "sha256": "f93f98f4aba92424fc4db30537d95b3ccebedacc35b24fca15fca87c9169ed6c",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_081_indo": {
+      "filename": "eval_v2_081_indo.jpg",
+      "category": "indoor_and_cluttered",
+      "split": "dev",
+      "dimensions": "800x533",
+      "sha256": "87950998f42708edc354d1019e56dc18f13ae0d1ac13a7015af57a7189f67073",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_082_diff": {
+      "filename": "eval_v2_082_diff.jpg",
+      "category": "difficult_and_ambiguous",
+      "split": "held_out",
+      "dimensions": "648x799",
+      "sha256": "7f16639dba535cf347cc1c81cef6ae4f824ab857e0d4a4ad1d66ae8ce47a1ab0",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_083_diff": {
+      "filename": "eval_v2_083_diff.jpg",
+      "category": "difficult_and_ambiguous",
+      "split": "dev",
+      "dimensions": "477x552",
+      "sha256": "9b92e6d62f00f12145c36bd024102b9590a3bfed5afcac61cf621b31a693777f",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_084_diff": {
+      "filename": "eval_v2_084_diff.jpg",
+      "category": "difficult_and_ambiguous",
+      "split": "held_out",
+      "dimensions": "425x646",
+      "sha256": "efb858e174371d0c61181153413e5c00ce7d515a2b3dcf0c1db0dc252e7a5879",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_085_diff": {
+      "filename": "eval_v2_085_diff.jpg",
+      "category": "difficult_and_ambiguous",
+      "split": "dev",
+      "dimensions": "551x800",
+      "sha256": "5fc1160f656b3317b702074957934e1d0a61c798391123f04823ec9c7330902f",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_086_diff": {
+      "filename": "eval_v2_086_diff.jpg",
+      "category": "difficult_and_ambiguous",
+      "split": "held_out",
+      "dimensions": "450x299",
+      "sha256": "b60b4b211f591a97edab9e20ced9588d2a83c490bcad0fad7945abee10464047",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_087_diff": {
+      "filename": "eval_v2_087_diff.jpg",
+      "category": "difficult_and_ambiguous",
+      "split": "dev",
+      "dimensions": "531x800",
+      "sha256": "a6343b43f320669abf4caecab444c22a229e217ea0aa359550985a3728ac49e2",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_088_diff": {
+      "filename": "eval_v2_088_diff.jpg",
+      "category": "difficult_and_ambiguous",
+      "split": "held_out",
+      "dimensions": "800x527",
+      "sha256": "5c9ded798ead3f56df156d288e81a738aacc1318f6f7d66d7ce85c6a8cedb3cf",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_089_diff": {
+      "filename": "eval_v2_089_diff.jpg",
+      "category": "difficult_and_ambiguous",
+      "split": "dev",
+      "dimensions": "327x726",
+      "sha256": "627e11f994417e65ec02786480b93feda745a344a3647e6ee036a439c4ae13de",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_090_diff": {
+      "filename": "eval_v2_090_diff.jpg",
+      "category": "difficult_and_ambiguous",
+      "split": "held_out",
+      "dimensions": "800x306",
+      "sha256": "82a43e3104898d253ce6d0e6cabcee577a6ea9256b9c18d5e2b229b8c1bfd36a",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_091_diff": {
+      "filename": "eval_v2_091_diff.jpg",
+      "category": "difficult_and_ambiguous",
+      "split": "dev",
+      "dimensions": "650x387",
+      "sha256": "c8409c65c9e992ee26f095a73c8a63d7d530f6be83f6c9c6577ddce500e234ba",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_092_diff": {
+      "filename": "eval_v2_092_diff.jpg",
+      "category": "difficult_and_ambiguous",
+      "split": "held_out",
+      "dimensions": "600x602",
+      "sha256": "9070fd7db8007a3dd31945f5d198e53378994354b902d66ea1ebd79a4a18cc47",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_093_diff": {
+      "filename": "eval_v2_093_diff.jpg",
+      "category": "difficult_and_ambiguous",
+      "split": "dev",
+      "dimensions": "438x800",
+      "sha256": "f4d6039d24bbfcaa54fa2450a4575f37a1ad8cc7745f1cd2d84e5bbf7d61bcef",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_094_diff": {
+      "filename": "eval_v2_094_diff.jpg",
+      "category": "difficult_and_ambiguous",
+      "split": "held_out",
+      "dimensions": "800x533",
+      "sha256": "6819fd6e9a6ba6923389259234038f187a87c4e88ad013c4474f02cbd7ec262b",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_095_diff": {
+      "filename": "eval_v2_095_diff.jpg",
+      "category": "difficult_and_ambiguous",
+      "split": "dev",
+      "dimensions": "797x800",
+      "sha256": "42fcdf7e28d7f899da86e295272897742bbcbb7dfe32f6b2a50c5496d489c2be",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    },
+    "eval_v2_096_diff": {
+      "filename": "eval_v2_096_diff.jpg",
+      "category": "difficult_and_ambiguous",
+      "split": "held_out",
+      "dimensions": "800x427",
+      "sha256": "de0ac5e6a09458288921c3a27c4059b995b9f2060f83655c75aef414500705e5",
+      "reference_captions": [
+        {
+          "ref_id": 1,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 2,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 3,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 4,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        },
+        {
+          "ref_id": 5,
+          "caption": "",
+          "status": "PENDING_HUMAN_EVALUATION"
+        }
+      ]
+    }
+  }
+}

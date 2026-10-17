@@ -1,0 +1,186 @@
+{
+  "sampling_seed42": {
+    "candidates": [
+      {
+        "caption": "a screenshot of the character in the game",
+        "clip_score": -1.1964,
+        "raw_loss": 1.1964,
+        "scoring_method": "blip_cross_entropy_log_likelihood",
+        "rank": 1,
+        "normalized_clip_score": 1.0
+      },
+      {
+        "caption": "a screenshot of person in the disney movie",
+        "clip_score": -1.4137,
+        "raw_loss": 1.4137,
+        "scoring_method": "blip_cross_entropy_log_likelihood",
+        "rank": 2,
+        "normalized_clip_score": 0.650137
+      },
+      {
+        "caption": "an animation of a girl with long hair",
+        "clip_score": -1.4462,
+        "raw_loss": 1.4462,
+        "scoring_method": "blip_cross_entropy_log_likelihood",
+        "rank": 3,
+        "normalized_clip_score": 0.59781
+      },
+      {
+        "caption": "a girl in blue shirt with long black hair, wearing pearls and earrings",
+        "clip_score": -1.6025,
+        "raw_loss": 1.6025,
+        "scoring_method": "blip_cross_entropy_log_likelihood",
+        "rank": 4,
+        "normalized_clip_score": 0.34616
+      },
+      {
+        "caption": "an animation character created for the disney movie",
+        "clip_score": -1.8175,
+        "raw_loss": 1.8175,
+        "scoring_method": "blip_cross_entropy_log_likelihood",
+        "rank": 5,
+        "normalized_clip_score": 0.0
+      }
+    ],
+    "anchor": "the face of a woman with dark hair and brown eyes",
+    "detail": "a girl with long black hair and blue shirt",
+    "fused": "",
+    "fusion_status": "GROQ_KEY_NOT_CONFIGURED"
+  },
+  "sampling_seed100": {
+    "candidates": [
+      {
+        "caption": "the face of a young girl with long black hair",
+        "clip_score": -1.0849,
+        "raw_loss": 1.0849,
+        "scoring_method": "blip_cross_entropy_log_likelihood",
+        "rank": 1,
+        "normalized_clip_score": 1.0
+      },
+      {
+        "caption": "the face of a woman with long hair, wearing blue shirt and jeans",
+        "clip_score": -1.298,
+        "raw_loss": 1.298,
+        "scoring_method": "blip_cross_entropy_log_likelihood",
+        "rank": 2,
+        "normalized_clip_score": 0.783479
+      },
+      {
+        "caption": "a cartoon character in the sims game",
+        "clip_score": -1.4676,
+        "raw_loss": 1.4676,
+        "scoring_method": "blip_cross_entropy_log_likelihood",
+        "rank": 3,
+        "normalized_clip_score": 0.611156
+      },
+      {
+        "caption": "the face of person from person ' s new animated series",
+        "clip_score": -1.7734,
+        "raw_loss": 1.7734,
+        "scoring_method": "blip_cross_entropy_log_likelihood",
+        "rank": 4,
+        "normalized_clip_score": 0.300447
+      },
+      {
+        "caption": "an animation character created by me to simulate the character ' s mood",
+        "clip_score": -2.0691,
+        "raw_loss": 2.0691,
+        "scoring_method": "blip_cross_entropy_log_likelihood",
+        "rank": 5,
+        "normalized_clip_score": 0.0
+      }
+    ],
+    "anchor": "a screenshot of a woman with long black hair, wearing blue shirt",
+    "detail": "a cartoon of a girl with black hair",
+    "fused": "",
+    "fusion_status": "GROQ_KEY_NOT_CONFIGURED"
+  },
+  "sampling_seed2026": {
+    "candidates": [
+      {
+        "caption": "a person with black hair, wearing a blue shirt and earrings",
+        "clip_score": -1.0655,
+        "raw_loss": 1.0655,
+        "scoring_method": "blip_cross_entropy_log_likelihood",
+        "rank": 1,
+        "normalized_clip_score": 1.0
+      },
+      {
+        "caption": "the face of a girl in the game",
+        "clip_score": -1.4019,
+        "raw_loss": 1.4019,
+        "scoring_method": "blip_cross_entropy_log_likelihood",
+        "rank": 2,
+        "normalized_clip_score": 0.631867
+      },
+      {
+        "caption": "a cartoon character that is in the likeness of person",
+        "clip_score": -1.5362,
+        "raw_loss": 1.5362,
+        "scoring_method": "blip_cross_entropy_log_likelihood",
+        "rank": 3,
+        "normalized_clip_score": 0.484898
+      },
+      {
+        "caption": "a cartoon character from the animated movie series",
+        "clip_score": -1.6038,
+        "raw_loss": 1.6038,
+        "scoring_method": "blip_cross_entropy_log_likelihood",
+        "rank": 4,
+        "normalized_clip_score": 0.410921
+      },
+      {
+        "caption": "the cartoon avatars and face of a young woman",
+        "clip_score": -1.9793,
+        "raw_loss": 1.9793,
+        "scoring_method": "blip_cross_entropy_log_likelihood",
+        "rank": 5,
+        "normalized_clip_score": 0.0
+      }
+    ],
+    "anchor": "a cartoon character with black hair and brown eyes, wearing blue shirt",
+    "detail": "the face of a girl with long hair and black eyes",
+    "fused": "",
+    "fusion_status": "GROQ_KEY_NOT_CONFIGURED"
+  },
+  "beam_search": {
+    "candidates": [
+      {
+        "caption": "a screenshot of a woman in a blue shirt",
+        "clip_score": -0.8108,
+        "raw_loss": 0.8108,
+        "scoring_method": "blip_cross_entropy_log_likelihood",
+        "rank": 1,
+        "normalized_clip_score": 1.0
+      },
+      {
+        "caption": "a screenshot of a woman in a blue shirt and black hair",
+        "clip_score": -0.8747,
+        "raw_loss": 0.8747,
+        "scoring_method": "blip_cross_entropy_log_likelihood",
+        "rank": 2,
+        "normalized_clip_score": 0.223572
+      },
+      {
+        "caption": "a screenshot of a woman with long black hair and blue shirt",
+        "clip_score": -0.8928,
+        "raw_loss": 0.8928,
+        "scoring_method": "blip_cross_entropy_log_likelihood",
+        "rank": 3,
+        "normalized_clip_score": 0.003645
+      },
+      {
+        "caption": "a screenshot of a woman with long black hair",
+        "clip_score": -0.8931,
+        "raw_loss": 0.8931,
+        "scoring_method": "blip_cross_entropy_log_likelihood",
+        "rank": 4,
+        "normalized_clip_score": 0.0
+      }
+    ],
+    "anchor": "a screenshot of a woman in a blue shirt",
+    "detail": "a screenshot of a woman in a blue shirt and black hair",
+    "fused": "",
+    "fusion_status": "GROQ_KEY_NOT_CONFIGURED"
+  }
+}

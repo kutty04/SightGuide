@@ -1,0 +1,34 @@
+{
+  "experiment_name": "SightGuide Eval-V2 Decoding & Genuine Scoring Evaluation (V2 Extended)",
+  "timestamp_utc": "2026-10-13T17:23:15.548313+00:00",
+  "total_images_evaluated": 12,
+  "model_checkpoint": "Salesforce/blip-image-captioning-base",
+  "scoring_method": "blip_cross_entropy_log_likelihood",
+  "hardware_environment": "Intel Core i5-1235U CPU (No GPU/CUDA)",
+  "methodological_notes": {
+    "repetition_rate": "Bigram repetition rate is 0.00% because no_repeat_ngram_size=2 is actively enforced during generation by decoder constraint.",
+    "unconstrained_diversity_metrics": "distinct_1_ratio, distinct_2_ratio, and vocab_size provide unconstrained measures of lexical richness."
+  },
+  "results_by_strategy": {
+    "sample": {
+      "mean_latency_seconds": 25.604,
+      "mean_pool_diversity": 0.7231,
+      "mean_distinct_1_ratio": 0.5204,
+      "mean_distinct_2_ratio": 0.7585,
+      "mean_caption_length": 9.75,
+      "mean_repetition_rate": 0.0,
+      "divergent_pairs_count": 2,
+      "divergence_percentage": 16.67
+    },
+    "beam": {
+      "mean_latency_seconds": 20.098,
+      "mean_pool_diversity": 0.4062,
+      "mean_distinct_1_ratio": 0.3407,
+      "mean_distinct_2_ratio": 0.4691,
+      "mean_caption_length": 8.94,
+      "mean_repetition_rate": 0.0,
+      "divergent_pairs_count": 1,
+      "divergence_percentage": 8.33
+    }
+  }
+}

@@ -28,39 +28,39 @@ export const ComparisonView: React.FC<ComparisonViewProps> = ({ comparison }) =>
     <div className="space-y-6">
       {/* Divergence Header Badge */}
       <div
-        className={`p-4 rounded-2xl border flex flex-wrap items-center justify-between gap-3 shadow-md ${
+        className={`p-4 border flex flex-wrap items-center justify-between gap-3 shadow-md ${
           is_divergent
-            ? 'bg-emerald-950/30 border-emerald-500/50 text-emerald-200'
-            : 'bg-slate-900/80 border-slate-700/80 text-slate-200'
+            ? 'bg-[#D4FF00]/10 border-[#D4FF00] text-white'
+            : 'bg-[#0c0c0c] border-white/20 text-white'
         }`}
       >
         <div className="flex items-center gap-3">
           <div
-            className={`w-9 h-9 rounded-xl flex items-center justify-center font-bold ${
-              is_divergent ? 'bg-emerald-500 text-slate-950' : 'bg-slate-800 text-slate-300'
+            className={`w-9 h-9 border flex items-center justify-center font-bold ${
+              is_divergent ? 'bg-[#D4FF00] text-black border-[#D4FF00]' : 'bg-black text-[#D4FF00] border-white/20'
             }`}
           >
             <GitCompare className="w-5 h-5" />
           </div>
           <div>
-            <h4 className="text-sm font-bold flex items-center gap-2">
+            <h4 className="text-sm font-mono font-bold flex items-center gap-2">
               {is_divergent ? (
                 <>
-                  <span>Selection Diverged from Naive Top-2</span>
-                  <span className="text-xs bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 px-2 py-0.5 rounded-full font-mono">
-                    +{(pair_diversity_delta * 100).toFixed(1)}% Diversity Delta
+                  <span className="text-[#D4FF00]">SELECTION DIVERGED FROM NAIVE TOP-2</span>
+                  <span className="text-xs bg-black text-[#D4FF00] border border-[#D4FF00] px-2 py-0.5 font-mono">
+                    +{(pair_diversity_delta * 100).toFixed(1)}% DIVERSITY DELTA
                   </span>
                 </>
               ) : (
                 <>
-                  <span>Identical Candidate Pair Selected</span>
-                  <span className="text-xs bg-slate-800 text-slate-400 border border-slate-700 px-2 py-0.5 rounded-full font-mono">
-                    Optimal Non-Redundant
+                  <span>IDENTICAL CANDIDATE PAIR SELECTED</span>
+                  <span className="text-xs bg-black text-zinc-400 border border-white/20 px-2 py-0.5 font-mono">
+                    OPTIMAL NON-REDUNDANT
                   </span>
                 </>
               )}
             </h4>
-            <p className="text-xs text-slate-400 mt-0.5">
+            <p className="text-xs text-zinc-400 mt-1 font-sans">
               {is_divergent
                 ? 'MMR penalty eliminated candidate redundancy, selecting a complementary secondary caption.'
                 : 'Candidate 2 was already non-redundant with visual anchor; both methods chose the same pair.'}
@@ -69,75 +69,85 @@ export const ComparisonView: React.FC<ComparisonViewProps> = ({ comparison }) =>
         </div>
 
         <div className="text-right">
-          <span className="text-xs font-mono text-slate-400 block">Proposed MMR Lambda</span>
-          <span className="text-sm font-mono font-bold text-indigo-400">
+          <span className="text-[10px] font-mono uppercase text-zinc-400 block tracking-wider">Proposed MMR Lambda</span>
+          <span className="text-sm font-mono font-bold text-[#D4FF00]">
             &lambda; = {proposed_pair.lambda_weight.toFixed(2)}
           </span>
         </div>
       </div>
 
+      {/* Confidence Warning Banner */}
+      {comparison.confidence_warning && (
+        <div className="p-3.5 bg-amber-950/40 border border-amber-500/50 text-amber-200 text-xs font-mono flex items-center gap-2.5">
+          <Info className="w-4 h-4 text-amber-400 flex-shrink-0" />
+          <span>
+            <strong>LOW VISUAL ALIGNMENT WARNING:</strong> {comparison.confidence_warning}
+          </span>
+        </div>
+      )}
+
       {/* Side-by-Side Comparison Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {/* CONTROL METHOD CARD */}
-        <div className="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 space-y-4 flex flex-col justify-between">
+        <div className="bg-[#0c0c0c] border border-white/10 p-5 space-y-4 flex flex-col justify-between">
           <div className="space-y-3">
-            <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+            <div className="flex items-center justify-between border-b border-white/10 pb-3">
               <div>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">
+                <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-zinc-400 block">
                   Control Method (Baseline)
                 </span>
-                <h4 className="text-sm font-semibold text-slate-100 flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-sky-400" />
-                  Naive CLIP Top-2 Selection
+                <h4 className="text-sm font-bold text-white flex items-center gap-1.5 mt-0.5">
+                  <CheckCircle2 className="w-4 h-4 text-zinc-400" />
+                  Naive Top-2 Selection
                 </h4>
               </div>
-              <span className="text-xs font-mono bg-sky-950/60 text-sky-300 border border-sky-800/60 px-2 py-1 rounded-md">
+              <span className="text-xs font-mono bg-black text-zinc-300 border border-white/20 px-2 py-1">
                 &lambda; = 1.00
               </span>
             </div>
 
             {/* Input Pair Details */}
-            <div className="bg-slate-950/50 rounded-xl p-3 border border-slate-800/80 space-y-2">
-              <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider block">
+            <div className="bg-black p-3.5 border border-white/10 space-y-2.5">
+              <span className="text-[10px] font-mono font-bold text-zinc-400 uppercase tracking-widest block">
                 Selected Input Captions
               </span>
-              <div className="text-xs text-slate-300 space-y-1">
+              <div className="text-xs text-zinc-300 space-y-1.5 font-sans">
                 <p>
-                  <strong className="text-indigo-400">c1:</strong> "{control_pair.rank_1_caption}"
+                  <strong className="text-[#D4FF00] font-mono">c1:</strong> &ldquo;{control_pair.rank_1_caption}&rdquo;
                 </p>
                 <p>
-                  <strong className="text-sky-400">c2 (Rank {control_pair.rank_2_original_rank}):</strong> "
-                  {control_pair.rank_2_caption}"
+                  <strong className="text-zinc-400 font-mono">c2 (Rank {control_pair.rank_2_original_rank}):</strong> &ldquo;
+                  {control_pair.rank_2_caption}&rdquo;
                 </p>
               </div>
 
-              <div className="pt-2 border-t border-slate-800/60 flex justify-between text-[11px] font-mono text-slate-400">
+              <div className="pt-2 border-t border-white/10 flex justify-between text-[11px] font-mono text-zinc-400">
                 <span>
-                  Input Diversity: <strong className="text-slate-200">{(control_pair.pair_diversity * 100).toFixed(1)}%</strong>
+                  Input Diversity: <strong className="text-white">{(control_pair.pair_diversity * 100).toFixed(1)}%</strong>
                 </span>
                 <span>
-                  Jaccard Overlap: <strong className="text-slate-200">{(control_pair.pair_similarity * 100).toFixed(1)}%</strong>
+                  Jaccard Overlap: <strong className="text-white">{(control_pair.pair_similarity * 100).toFixed(1)}%</strong>
                 </span>
               </div>
             </div>
 
             {/* Final Fused Output */}
             <div className="space-y-2 pt-2">
-              <span className="text-xs font-semibold text-slate-300 flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5 text-sky-400" />
-                Control LLM-Fused Caption
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-zinc-300 flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-zinc-400" />
+                Control LLM-Fused Narrative
               </span>
-              <div className="p-3.5 bg-slate-950 rounded-xl border border-slate-800 min-h-[4rem] flex items-center">
+              <div className="p-4 bg-black border border-white/10 min-h-[4.5rem] flex items-center">
                 {control_fusion.generation_status === 'SUCCESS' ? (
-                  <p className="text-sm text-slate-100 font-medium italic">
-                    "{control_fusion.fused_caption}"
+                  <p className="text-sm text-zinc-200 font-sans italic leading-relaxed">
+                    &ldquo;{control_fusion.fused_caption}&rdquo;
                   </p>
                 ) : control_fusion.generation_status === 'GROQ_KEY_NOT_CONFIGURED' ? (
-                  <p className="text-xs text-amber-300/80 italic">
+                  <p className="text-xs font-mono text-amber-300/80 italic">
                     [Pending Live LLM Fusion: Configure GROQ_API_KEY]
                   </p>
                 ) : (
-                  <p className="text-xs text-red-300/80 italic">
+                  <p className="text-xs font-mono text-red-300/80 italic">
                     [{control_fusion.generation_status}: {control_fusion.error_details || 'Failed'}]
                   </p>
                 )}
@@ -154,65 +164,65 @@ export const ComparisonView: React.FC<ComparisonViewProps> = ({ comparison }) =>
         </div>
 
         {/* PROPOSED METHOD CARD */}
-        <div className="bg-slate-900/90 border border-emerald-900/60 rounded-2xl p-5 space-y-4 flex flex-col justify-between shadow-lg shadow-emerald-950/20">
+        <div className="bg-[#0c0c0c] border border-[#D4FF00] p-5 space-y-4 flex flex-col justify-between shadow-[0_0_20px_rgba(212,255,0,0.15)] reticle-bracket">
           <div className="space-y-3">
-            <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+            <div className="flex items-center justify-between border-b border-white/10 pb-3">
               <div>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-400 block">
+                <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-[#D4FF00] block">
                   Proposed Research Contribution
                 </span>
-                <h4 className="text-sm font-semibold text-slate-100 flex items-center gap-1.5">
-                  <Zap className="w-4 h-4 text-emerald-400" />
+                <h4 className="text-sm font-bold text-white flex items-center gap-1.5 mt-0.5">
+                  <Zap className="w-4 h-4 text-[#D4FF00]" />
                   Diversity-Aware Ranking (MMR)
                 </h4>
               </div>
-              <span className="text-xs font-mono bg-emerald-950/60 text-emerald-300 border border-emerald-800/60 px-2 py-1 rounded-md">
+              <span className="text-xs font-mono bg-black text-[#D4FF00] border border-[#D4FF00] px-2 py-1 font-bold">
                 &lambda; = {proposed_pair.lambda_weight.toFixed(2)}
               </span>
             </div>
 
             {/* Input Pair Details */}
-            <div className="bg-slate-950/50 rounded-xl p-3 border border-slate-800/80 space-y-2">
-              <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider block">
+            <div className="bg-black p-3.5 border border-white/10 space-y-2.5">
+              <span className="text-[10px] font-mono font-bold text-[#D4FF00] uppercase tracking-widest block">
                 Selected Input Captions
               </span>
-              <div className="text-xs text-slate-300 space-y-1">
+              <div className="text-xs text-zinc-200 space-y-1.5 font-sans">
                 <p>
-                  <strong className="text-indigo-400">c1*:</strong> "{proposed_pair.rank_1_caption}"
+                  <strong className="text-[#D4FF00] font-mono">c1*:</strong> &ldquo;{proposed_pair.rank_1_caption}&rdquo;
                 </p>
                 <p>
-                  <strong className="text-emerald-400">c2* (Rank {proposed_pair.rank_2_original_rank}):</strong> "
-                  {proposed_pair.rank_2_caption}"
+                  <strong className="text-[#D4FF00] font-mono">c2* (Rank {proposed_pair.rank_2_original_rank}):</strong> &ldquo;
+                  {proposed_pair.rank_2_caption}&rdquo;
                 </p>
               </div>
 
-              <div className="pt-2 border-t border-slate-800/60 flex justify-between text-[11px] font-mono text-slate-400">
+              <div className="pt-2 border-t border-white/10 flex justify-between text-[11px] font-mono text-zinc-400">
                 <span>
-                  Input Diversity: <strong className="text-emerald-300 font-bold">{(proposed_pair.pair_diversity * 100).toFixed(1)}%</strong>
+                  Input Diversity: <strong className="text-[#D4FF00] font-bold">{(proposed_pair.pair_diversity * 100).toFixed(1)}%</strong>
                 </span>
                 <span>
-                  Jaccard Overlap: <strong className="text-slate-200">{(proposed_pair.pair_similarity * 100).toFixed(1)}%</strong>
+                  Jaccard Overlap: <strong className="text-white">{(proposed_pair.pair_similarity * 100).toFixed(1)}%</strong>
                 </span>
               </div>
             </div>
 
             {/* Final Fused Output */}
             <div className="space-y-2 pt-2">
-              <span className="text-xs font-semibold text-slate-300 flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
-                Proposed LLM-Fused Caption
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-[#D4FF00] flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-[#D4FF00]" />
+                Proposed LLM-Fused Narrative
               </span>
-              <div className="p-3.5 bg-slate-950 rounded-xl border border-emerald-900/60 min-h-[4rem] flex items-center">
+              <div className="p-4 bg-black border border-[#D4FF00]/50 min-h-[4.5rem] flex items-center">
                 {proposed_fusion.generation_status === 'SUCCESS' ? (
-                  <p className="text-sm text-slate-100 font-medium italic">
-                    "{proposed_fusion.fused_caption}"
+                  <p className="text-sm text-white font-sans font-medium italic leading-relaxed">
+                    &ldquo;{proposed_fusion.fused_caption}&rdquo;
                   </p>
                 ) : proposed_fusion.generation_status === 'GROQ_KEY_NOT_CONFIGURED' ? (
-                  <p className="text-xs text-amber-300/80 italic">
+                  <p className="text-xs font-mono text-amber-300/80 italic">
                     [Pending Live LLM Fusion: Configure GROQ_API_KEY]
                   </p>
                 ) : (
-                  <p className="text-xs text-red-300/80 italic">
+                  <p className="text-xs font-mono text-red-300/80 italic">
                     [{proposed_fusion.generation_status}: {proposed_fusion.error_details || 'Failed'}]
                   </p>
                 )}
@@ -230,15 +240,17 @@ export const ComparisonView: React.FC<ComparisonViewProps> = ({ comparison }) =>
       </div>
 
       {/* Plain Language Explanation Callout */}
-      <div className="p-4 bg-slate-900/70 border border-slate-800 rounded-2xl flex items-start gap-3 text-xs text-slate-300">
-        <Info className="w-4 h-4 text-indigo-400 flex-shrink-0 mt-0.5" />
+      <div className="p-4 bg-[#0c0c0c] border border-white/10 flex items-start gap-3 text-xs text-zinc-300">
+        <Info className="w-4 h-4 text-[#D4FF00] flex-shrink-0 mt-0.5" />
         <div className="space-y-1">
-          <span className="font-semibold text-slate-200 uppercase tracking-wider block">
-            Ranker Rationale & Analysis
+          <span className="font-mono font-bold text-white uppercase tracking-wider block">
+            Ranker Rationale &amp; Analysis
           </span>
-          <p className="leading-relaxed text-slate-400">{plain_language_explanation}</p>
+          <p className="leading-relaxed text-zinc-400 font-sans">{plain_language_explanation}</p>
         </div>
       </div>
     </div>
   );
 };
+
+export default ComparisonView;
