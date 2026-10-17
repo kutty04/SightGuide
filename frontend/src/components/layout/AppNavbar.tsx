@@ -19,9 +19,22 @@ export const AppNavbar: React.FC = () => {
   const [health, setHealth] = useState<HealthResponse | null>(null);
 
   useEffect(() => {
-    fetchHealth()
-      .then(setHealth)
-      .catch(() => setHealth(null));
+    let active = true;
+    const check = () => {
+      fetchHealth()
+        .then((data) => {
+          if (active) setHealth(data);
+        })
+        .catch(() => {
+          if (active) setHealth(null);
+        });
+    };
+    check();
+    const interval = setInterval(check, 12000);
+    return () => {
+      active = false;
+      clearInterval(interval);
+    };
   }, []);
 
   // Close mobile menu on Escape key press
