@@ -405,15 +405,20 @@ export const AccessibilityApp: React.FC = () => {
     stopAllSpeech();
 
     try {
-      setProcessingStage('Analyzing scene with BLIP & diversity ranking...');
-      const captionPromise = generateCaption(selectedFile, lambdaWeight, 'proposed', decodingStrategy);
-
       setProcessingStage('Extracting visible text & layout with RapidOCR...');
-      const ocrPromise = extractOCR(selectedFile);
-
-      const [captionRes, ocrRes] = await Promise.all([captionPromise, ocrPromise]);
-      setCaptionResult(captionRes);
+      const ocrRes = await extractOCR(selectedFile);
       setOcrResult(ocrRes);
+
+      setProcessingStage('Analyzing scene with diversity-aware ranking & LLM fusion...');
+      const captionRes = await generateCaption(
+        selectedFile,
+        lambdaWeight,
+        'proposed',
+        decodingStrategy,
+        ocrRes.text,
+        ocrRes.normalized_text
+      );
+      setCaptionResult(captionRes);
     } catch (err: any) {
       setErrorMessage(err.message || 'An error occurred during image processing.');
     } finally {

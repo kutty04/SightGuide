@@ -105,6 +105,17 @@ class OCRService:
 
         try:
             pil_img = Image.open(io.BytesIO(image_bytes)).convert("RGB")
+            orig_w, orig_h = pil_img.size
+            MAX_OCR_DIM = 1280
+            if max(orig_w, orig_h) > MAX_OCR_DIM:
+                scale = MAX_OCR_DIM / max(orig_w, orig_h)
+                new_w = max(1, int(orig_w * scale))
+                new_h = max(1, int(orig_h * scale))
+                pil_img = pil_img.resize((new_w, new_h), Image.Resampling.BILINEAR)
+                scale_coord = orig_w / new_w
+            else:
+                scale_coord = 1.0
+
             np_img = np.array(pil_img)
             np_bgr = cv2.cvtColor(np_img, cv2.COLOR_RGB2BGR)
 
@@ -277,8 +288,12 @@ class OCRService:
                     "engine": "rapidocr-onnxruntime-cpu"
                 }
 
+            if scale_coord != 1.0:
+                for item in merged_items:
+                    item[0] = [[pt[0] * scale_coord, pt[1] * scale_coord] for pt in item[0]]
+
             formatted_text, lines = sort_and_format_ocr_results(merged_items)
-            normalized_text, lines = contextually_normalize_ocr(formatted_text, lines, img_h=np_bgr.shape[0])
+            normalized_text, lines = contextually_normalize_ocr(formatted_text, lines, img_h=orig_h)
 
             return {
                 "text": formatted_text,
